@@ -41,4 +41,35 @@ At the top of the file, find this section, and replace yourkey and yourregion wi
 
 2. You should do the following to make it easier to run.  The script is a .ps1 script.  By default, if you just open it, it will open in a text editor (or ask you how to open it if you don't have a suitable editor).  To make it easier to run in the future, right click the .ps1 file, click Open With, Browse for an App on this PC, navigate to C:\Program Files\PowerShell\7, and choose pwsh.exe.  Click Always so that it always uses this method to run.
 
-3. On the first run, it will create a key and region file using the info you put into the 
+3. On the first run, it will create a key and region file using the info you put into the top of the script.  Do not delete them, they are necessary for TTS to work and will simply be re-added the next time you run the script.
+
+4. Once the key and region files are written, it will begin reading your .csv and the voices.json file. The voices.json file is a list of voices supported by Azure TTS.  Then, it will list all supported voices that match the language code (e.g. en) of your .csv.
+
+5. Once it's gathered the info, it'll look for a config.json file.  If this is the first time running the script, there won't be one, so then it'll ask you to enter your settings for the first batch synthesis.
+![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/988f63f9-4b4c-4ae3-b074-b234d197b615)
+
+6. Enter the ShortName voice you want to use.  If you do not, press enter and it will default to en-US-GuyNeural.  If you are generating in a language other than English, the default is still the same, so you'll have to pick one.  The entry is case sensitive.
+![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/b70136b0-51df-491c-ac21-6d0fb3469d2a)
+
+7. If the voice you chose has different styles available, it will list those and ask you to choose.  Press Enter to skip (and keep a the defualt neutral tone), or pick one from the list.
+![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/d610bcae-2488-465e-8f4b-04424e9cefae)
+
+8. It will then ask you for the speed multiplier.  This is pretty self explanatory.  I typically choose 1.25 as it speeds up the voice just a tad, but feel free to experiment and see what works best for you.
+![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/c1dce821-baff-4952-a2a1-fd92bb4edab4)
+
+9. It will then ask you to enter the Pre-Silence and Post-Silence length.  This is the "dead space" before and after the actual speech in the .wav file.  Typically, the default 100ms for both is a good balance, but feel free to experiment.
+![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/fda7d0bc-2136-4d7f-8e09-57dee95f9a74)
+
+10. Once all configuration is finished, it will write your choices to a config.json file.  The next time the script is run, it will skip the configuration steps.
+![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/d0d786b7-7853-4c9e-9913-648e9ab10568)
+
+11. Press enter, and it will begin synthesizing the audio files.
+
+Common Errors:
+Error 429: The Azure F0 (Free) pricing tier is limited to 20 requests per minute.  This script runs considerably faster than that, so every once in a while you will get Error 429.  Just let the script keep running and it will retry in a few seconds.
+Error 4429: You have exceeded the number of characters per month allowed on your subscription tier (Free is 500,000/mo).  You will not be able to generate any more audio unless you change your subscription type or wait until the next monthly cycle.  
+
+
+
+
+
