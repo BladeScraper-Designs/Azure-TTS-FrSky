@@ -10,8 +10,8 @@ if (!(Test-Path $keyFilePath) -or !(Test-Path $regionFilePath)) {
     Write-Host "Key and region files not found. Sending spx config commands..."
     Write-Host "`n"
     # Write spx config commands
-    spx --% config @key --set 0fe34f42542146f9b3612c1512d0941c
-    spx --% config @region --set eastus
+    spx --% config @key --set yourkey
+    spx --% config @region --set yourregion
 }
 else {
     Write-Host "Key and region files found. Continuing..."
