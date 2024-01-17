@@ -45,7 +45,7 @@ At the top of the file, find this section, and replace yourkey and yourregion wi
 
 4. Once the key and region files are written, it will begin reading your .csv and the voices.json file. The voices.json file is a list of voices supported by Azure TTS.  
 
-5. Once it's gathered the info, it'll look for a config.json file.  If this is the first time running the script, there won't be one, so then it'll ask you to enter your settings for the first batch synthesis, starting with the compatible voices that match your language code e.g. en).
+5. Once it's gathered the info, it'll look for a config.json file.  If this is the first time running the script, there won't be one, so then it'll ask you to enter your settings for the first batch synthesis, starting with the compatible voices that match the language code from your .csv, e.g. en).
 ![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/988f63f9-4b4c-4ae3-b074-b234d197b615)
 
 6. Enter the ShortName voice you want to use.  If you do not, press enter and it will default to en-US-GuyNeural.  If you are generating in a language other than English, the default is still the same, so you'll have to pick one.  The entry is case sensitive.
