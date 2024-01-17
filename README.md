@@ -77,8 +77,9 @@ Once the script is completed, the synthesized audio can be found in the 'out' fo
 The folder structure is such that you can copy the entire contents of the 'out' folder directly into the 'audio' folder on an Ethos radio running Ethos 1.5.  If you are on Ethos 1.4, or any other radio, you may need to just copy the files themselves and format them however is required by your system.
 
 ## Other Notes
-1. This is a fairly simple script, and there is little special treatment or optimizations for the outputted audio.  It simply reads from the .csv and sends that information straight to Azure for processing, with your configuration options added.  
-2. The script detects existing .wav files and skips it if the file already exists in that location.  As such, if you want to change only a single audio file (e.g. you don't like the phrase/words used in the .csv originally, or you want to make a custom version of it), you can simply delete that .wav and run the script again after changing that entry in the .csv, and it will only generate that single new file.  This prevents waste of precious characters, the quantity of which are limited by your Azure subscription.
+1. This is a fairly simple script, and there is little special treatment or optimizations for the outputted audio.  It simply reads from the .csv and sends that information straight to Azure for processing, with your configuration options added.
+   
+2. The script detects existing .wav files and skips synthesis if the file already exists in that location.  As such, if you want to change only a single audio file (e.g. you don't like the phrase/words used in the .csv originally, or you want to make a custom version of it), you can simply delete that .wav and run the script again after changing that entry in the .csv, and it will only generate that single new file.  This prevents waste of precious characters, the quantity of which are limited by your Azure subscription.
 ![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/1201e443-1fd5-49aa-b103-d07ba317ab99)
 
 
