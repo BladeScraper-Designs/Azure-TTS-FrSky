@@ -7,7 +7,7 @@ Designed and tested/used with FrSky radios (Ethos), but the process itself will 
    https://azure.microsoft.com/en-us/products/ai-services/text-to-speech
 2. All prerequesites for Azure Text to Speech Quickstart CLI
    https://learn.microsoft.com/en-us/azure/ai-services/speech-service/get-started-text-to-speech?tabs=windows%2Cterminal&pivots=programming-language-cli
-3. Powershell V7 (will not work on standard PS V6).
+3. Powershell V7 (will not work on Powershell V6)
 
 ## Other Requirements
 1. You must have the CSV file distributed by FrSky in their audio packs.
