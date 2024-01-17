@@ -10,13 +10,15 @@ if (!(Test-Path $keyFilePath) -or !(Test-Path $regionFilePath)) {
     Write-Host "Key and region files not found. Sending spx config commands..."
     Write-Host "`n"
     # Write spx config commands
-    spx --% config @key --set yourkey
-    spx --% config @region --set yourregion
+    spx --% config @key --set 0fe34f42542146f9b3612c1512d0941c
+    spx --% config @region --set eastus
 }
 else {
     Write-Host "Key and region files found. Continuing..."
     Start-Sleep -Seconds 1.0
 }
+
+#### Initial read of .json and .csv files to retrieve region and shortnames ####
 
 # Read the contents of "voices.json"
 Write-Host "`nReading voices.json to determine available voices..."
@@ -44,6 +46,9 @@ if ($matchingShortNames.Count -eq 0) {
     Write-Host "`nNo ShortNames found for language code: $languageCode"
     return
 }
+
+
+#### Config ####
 
 # Check if config.json exists
 Write-Host "Looking for config file..."
