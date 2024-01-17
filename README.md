@@ -1,4 +1,4 @@
-[# Azure TTS FrSky
+# Azure TTS FrSky
 A Powershell V7 script for using Microsoft Azure Speech Synthesis to generate Voice Packs for RC Transmitters.  
 
 Designed, tested, and optimized for use with FrSky radios on Ethos 1.5.  Works for older versions of Ethos, and probably for Open/EdgeTX, but the final output has the folder structure, files, etc in place for Ethos 1.5.
@@ -11,9 +11,8 @@ Designed, tested, and optimized for use with FrSky radios on Ethos 1.5.  Works f
 
 ## Notes
 1. This script is written and designed to work with any language supported by Azure TTS.  Languages supported by Azure but not by Ethos may not work without some changes to the folder structure (untested).
-2. This script was written largely by GitHub Companion, and stupid AI errors fixed by me (far from an experinced coder), so it's probably some of the ugliest code you've ever seen.  Suggestions for improvements are always welcome.
-3. Only one .csv file may be in the 'in' folder.
-4. Thanks to Bender for his help in getting this to work.
+2. Only one .csv file may be in the 'in' folder.
+3. Thanks to Bender for his help in getting this to work.
 
 ## CSV File
 The script is designed for and needs three features in your CSV:<br>
