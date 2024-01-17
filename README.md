@@ -20,8 +20,8 @@ The script is designed for and needs three features in your CSV:<br>
 Should be a two- or three-letter language code, such as en, fr, de, etc.<br>
 
 ### Contents:<br>
-Column 1: path to file to be generated.  e.g. system/1.wav, system/throttle-hold.wav, system/fm-1.wav, gearup.wav, etc<br>
-Column 2: text to convert into speech.  e.g. One, Throttle Hold, Flight Mode 1, Gear Up, etc<br>
+Column 1: path to file to be generated.  e.g. system/throttle-hold.wav, system/fm-1.wav, gearup.wav, etc<br>
+Column 2: text to convert into speech.  e.g. Throttle Hold, Flight Mode 1, Gear Up, etc<br>
 
 The script is compatible by default with the .csv file provided by FrSky when you download the 1.5 audiopack from Ethos Suite.  Usually this can be found on your radio's SD card or NAND flash.<br>
 
