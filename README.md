@@ -34,15 +34,12 @@ You need to set your key and region for Azure before the synthesis will work.  T
 
 At the top of the file, find this section, and replace yourkey and yourregion with your own information.  Get this info from your Azure Portal TTS Resource Group.
 
->if (!(Test-Path key) -or !(Test-Path region)) {<br>
->&emsp;spx --% config @key --set yourkey<br>
->&emsp;spx --% config @region --set yourregion<br>
->}
+>spx --% config @key --set yourkey<br>
+>spx --% config @region --set yourregion<br>
 
 ## Usage
 1. Ensure your have your .csv file located in the 'in' folder.  The downloaded ZIP from this repository includes the latest (for now) Ethos en.csv, but you can change it or update it as needed.
 
 2. You should do the following to make it easier to run.  The script is a .ps1 script.  By default, if you just open it, it will open in a text editor (or ask you how to open it if you don't have a suitable editor).  To make it easier to run in the future, right click the .ps1 file, click Open With, Browse for an App on this PC, navigate to C:\Program Files\PowerShell\7, and choose pwsh.exe.  Click Always so that it always uses this method to run.
-3. 
 
-4. 
+3. On the first run, it will create a key and region file using the info you put into the 
