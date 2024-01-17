@@ -53,7 +53,7 @@ At the top of the file, find this section, and replace yourkey and yourregion wi
 6. Enter the ShortName voice you want to use.  If you do not, press enter and it will default to en-US-GuyNeural.  If you are generating in a language other than English, the default is still the same, so you'll have to pick one.  The entry is case sensitive.
 ![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/b70136b0-51df-491c-ac21-6d0fb3469d2a)
 
-7. If the voice you chose has different styles available, it will list those and ask you to choose.  Press Enter to skip (and keep a the defualt neutral tone), or pick one from the list.
+7. If the voice you chose has different styles available, it will list those and ask you to choose.  Press Enter to skip (and keep the defualt neutral tone), or pick one from the list.
 ![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/d610bcae-2488-465e-8f4b-04424e9cefae)
 
 8. It will then ask you for the speed multiplier.  This is pretty self explanatory.  I typically choose 1.25 as it speeds up the voice just a tad, but feel free to experiment and see what works best for you.
