@@ -12,7 +12,7 @@ Designed, tested, and optimized for use with FrSky radios on Ethos 1.5.  Works f
 ## Other Requirements
 1. CSV File for Audio to Generate<br>
 &emsp;The script is designed for and needs three features in your CSV:<br>
-&emsp;Title: Should be a two- or three-letter language code, such as en, fr, de, etc.  Any language supported by Azure TTS should work (only en has been tested)<br>
+&emsp;Title: Should be a two- or three-letter language code, such as en, fr, de, etc.<br>
 &emsp;Contents:<br>
 &emsp;&emsp;Column 1: path to file to be generated.  e.g. system/1.wav, system/throttle-hold.wav, system/fm-1.wav, etc<br>
 &emsp;&emsp;Column 2: text to convert into speech.  e.g. Hello, Throttle Hold, Flight Mode 1, etc<br>
