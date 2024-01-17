@@ -1,6 +1,6 @@
 # Azure TTS FrSky
 A Powershell V7 script for using Microsoft Azure Speech Synthesis to generate Voice Packs for RC Transmitters.  
-Designed and tested/used with FrSky radios, but the process itself will work for any radio that can accept .wav audio files.
+Designed and tested/used with FrSky radios (Ethos), but the process itself will work for any radio that can accept .wav audio files.
 
 ## Prerequesites
 1. A subscription to Microsoft Azure (Free F0 tier will suffice for at least 10 complete voice pack generations per month)
