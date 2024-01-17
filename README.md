@@ -84,7 +84,7 @@ The folder structure is such that you can copy the entire contents of the 'out' 
 
 
 # Future Goals
-1. I'd like to make the script more flexible and automatically determine audio version from the audio.version file that comes with the downloaded FrSky audiopacks, and organize the folder structure output accordingly.
+1. I'd like to make the script more flexible and automatically determine audio version from the audio.version file that comes with the downloaded FrSky audiopacks, and organize the folder structure output accordingly.  Or, simply add a configuration option for "Ethos Version" with either 1.4, 1.4, or None (for non-Ethos system).
 2. I'd like to make it more of a menu system rather than just typing in stuff
 
 Any suggestions/feedback are always welcome.
