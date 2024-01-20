@@ -12,6 +12,8 @@ It contains the output for both Ethos 1.4 and Ethos 1.5.  Generated with the fol
    4. Leading Silence: 0ms
    5. Trailing Silence: 25ms
 
+The in/en.csv provided has some customizations of my own, including changed text to play and added lines.  The audio files in en-AU.zip contain all of these custom changes.
+
 ## Prerequesites
 1. A subscription to [Microsoft Azure](https://azure.microsoft.com/en-us/products/ai-services/text-to-speech) (Free F0 tier will suffice)<br>
 2. PowerShell V7 (will not work on V6)
