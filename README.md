@@ -49,33 +49,18 @@ At the top of the file, find this section, and replace yourkey and yourregion wi
 4. Once the key and region files are written, it will begin reading your .csv and the voices.json file. The voices.json file is a list of voices supported by Azure TTS.  
 
 5. Once it's gathered the info, it'll look for a config.json file.  If this is the first time running the script, there won't be one, so then it'll ask you to enter your settings for the first batch synthesis, starting with the compatible voices that match the language code from your .csv, e.g. en).
-![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/988f63f9-4b4c-4ae3-b074-b234d197b615)
 
-6. Enter the ShortName voice you want to use.  If you do not, press enter and it will default to en-US-GuyNeural.  If you are generating in a language other than English, the default is still the same, so you'll have to pick one.  The entry is case sensitive.
-![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/b70136b0-51df-491c-ac21-6d0fb3469d2a)
-
-7. If the voice you chose has different styles available, it will list those and ask you to choose.  Press Enter to skip (and keep the defualt neutral tone), or pick one from the list.
-![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/d610bcae-2488-465e-8f4b-04424e9cefae)
-
-8. It will then ask you for the speed multiplier.  This is pretty self explanatory.  I typically choose 1.25 as it speeds up the voice just a tad, but feel free to experiment and see what works best for you.
-![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/c1dce821-baff-4952-a2a1-fd92bb4edab4)
-
-9. It will then ask you to enter the Pre-Silence and Post-Silence length.  This is the "dead space" before and after the actual speech in the .wav file.  Typically, the default 100ms for both is a good balance, but feel free to experiment.
-![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/fda7d0bc-2136-4d7f-8e09-57dee95f9a74)
-
-10. Once all configuration is finished, it will write your choices to a config.json file.  The next time the script is run, it will skip the configuration steps.
-![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/d0d786b7-7853-4c9e-9913-648e9ab10568)
-
-11. Press enter, and it will begin synthesizing the audio files.
-
+6. Follow the on-screen prompts.  It's fairly straight-forward.
+   
 ### Common Errors:
 Error 429: The Azure F0 (Free) pricing tier is limited to 20 requests per minute.  This script runs considerably faster than that, so every once in a while you will get Error 429.  Just let the script keep running and it will retry in a few seconds.
 
 Error 4429: You have exceeded the number of characters per month allowed on your subscription tier (Free is 500,000/mo).  You will not be able to generate any more audio unless you change your subscription type or wait until the next monthly cycle.  
 
 ## Output
-Once the script is completed, the synthesized audio can be found in the 'out' folder.
-![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/902e36b9-a75f-4fa2-8778-78c76c8ebe7c)
+Once the script is completed, the synthesized audio can be found in the 'out' folder, according to the configured audio version (1.4, 1.5, or non-ethos).
+![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/af638e56-af15-464e-b26b-fd4d9ed6b61e)
+
 
 The folder structure is such that you can copy the entire contents of the 'out' folder directly into the 'audio' folder on an Ethos radio running Ethos 1.5.  If you are on Ethos 1.4, or any other radio, you may need to just copy the files themselves and format them however is required by your system.
 
@@ -84,6 +69,12 @@ The folder structure is such that you can copy the entire contents of the 'out' 
    
 2. The script detects existing .wav files and skips synthesis if the file already exists in that location.  As such, if you want to change only a single audio file (e.g. you don't like the phrase/words used in the .csv originally, or you want to make a custom version of it), you can simply delete that .wav and run the script again after changing that entry in the .csv, and it will only generate that single new file.  This prevents waste of precious characters, the quantity of which are limited by your Azure subscription.
 ![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/1201e443-1fd5-49aa-b103-d07ba317ab99)
+
+3. The script also detects changes in your .csv file compared to last run.  If it detects either a changed text to play on an existing file, or detects a new row, it only runs sythesis on the changed/added rows.
+![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/4fc7b555-ba87-4c4a-9b9e-fd83b096a4dd)
+
+4. If no changes in your csv are detected compared to last run, it will re-run all rows but only files that have been deleted or were never synthesized will be synthesized.
+![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/38bac67b-fbc2-43b5-a7c3-d50428feae61)
 
 
 # Future Goals
@@ -96,4 +87,10 @@ Any suggestions/feedback are always welcome.
 
 # Changelog
 0.1 - Initial Release
+0.5 - Huge update
+   1. Added detection of changed or added rows in csv compared to the last run
+   2. Vastly improved configuration routine
+   3. Improved and shortened main loop
+   4. added selection between Ethos 1.4 or Ethos 1.5 format (or neither) and output folder is set according to this config setting
+   5. Cleaned up code to the best of my (very limited) ability
 
