@@ -62,8 +62,6 @@ Once the script is completed, the synthesized audio can be found in the 'out' fo
 ![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/af638e56-af15-464e-b26b-fd4d9ed6b61e)
 
 
-The folder structure is such that you can copy the entire contents of the 'out' folder directly into the 'audio' folder on an Ethos radio running Ethos 1.5.  If you are on Ethos 1.4, or any other radio, you may need to just copy the files themselves and format them however is required by your system.
-
 ## Other Notes
 1. This is a fairly simple script, and there is little special treatment or optimizations for the output audio.  It simply reads from the .csv and sends that information straight to Azure for processing, with your configuration options added.
    
