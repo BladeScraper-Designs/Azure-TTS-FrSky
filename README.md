@@ -76,10 +76,9 @@ Once the script is completed, the synthesized audio can be found in the 'out' fo
 
 
 # Future Goals
-1. I'd like to make the script more flexible and automatically determine audio version from the audio.version file that comes with the downloaded FrSky audiopacks, and organize the folder structure output accordingly.  Or, simply add a configuration option for "Ethos Version" with either 1.4.x, 1.5.x, or None (for non-Ethos system).
-2. I'd like to make it more of a menu system rather than just typing in stuff
-3. I'd like to add support for the "Options" column (column 3) in the .csv.  Not sure what it'd be used for, I guess that remains to be seen.
-4. I'd like to support MultiLingual voices (such as AndrewMultilingualNeural) to allow generation of different languages with the same 'voice'.  Currently, if you choose a language other than English, the en-US-*MultilingualNeural options will not show up, even though they can speak that language.
+1. I'd like to make it more of a menu system rather than just typing in stuff
+2. I'd like to add support for the "Options" column (column 3) in the .csv.  Not sure what it'd be used for, I guess that remains to be seen.
+3. I'd like to support MultiLingual voices (such as AndrewMultilingualNeural) to allow generation of different languages with the same 'voice'.  Currently, if you choose a language other than English, the en-US-*MultilingualNeural options will not show up, even though they can speak that language.
 
 Any suggestions/feedback are always welcome.
 
