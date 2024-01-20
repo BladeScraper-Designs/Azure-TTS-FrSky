@@ -389,9 +389,8 @@ Move-Item -Path "*.log" -Destination $logFolderPath -Force
 #### End Sequence ####
 
 # Export the csvData.csv to lastCsvData.csv for examination on next run
-$csvDataPath = "in/csvData.csv"
 $lastCsvDataPath = "old/lastCsvData.csv"
-Copy-Item -Path $csvDataPath -Destination $lastCsvDataPath -Force
+Copy-Item -Path $csvFilePath -Destination $lastCsvDataPath -Force
 
 # Notify user that the job is done.
 Write-Host "`nSpeech synthesis complete."
