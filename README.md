@@ -83,7 +83,7 @@ Once the script is completed, the synthesized audio can be found in the 'out' fo
 Any suggestions/feedback are always welcome.
 
 # Changelog
-0.1 - Initial Release
+0.1 - Initial Release.<br>
 0.5 - Huge update
    1. Added detection of changed or added rows in csv compared to the last run
    2. Vastly improved configuration routine
