@@ -74,7 +74,7 @@ Once the script is completed, the synthesized audio can be found in the 'out' fo
 
 ## Other Notes
 1. This is a fairly simple script, and there is little special treatment or optimizations for the output audio.  It simply reads from the .csv and sends that information straight to Azure for processing, with your configuration options added.
-   (https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/1201e443-1fd5-49aa-b103-d07ba317ab99)
+![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/1201e443-1fd5-49aa-b103-d07ba317ab99)
 
 2. The script detects changes in your .csv file compared to last run.  If it detects either a changed text to play on an existing file, or detects a new row, it only runs sythesis on the changed/added rows. 
 ![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/4fc7b555-ba87-4c4a-9b9e-fd83b096a4dd)
