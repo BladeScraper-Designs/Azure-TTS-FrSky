@@ -60,7 +60,7 @@ At the top of the file, find this section, and replace yourkey and yourregion wi
 
 5. Once it's gathered the info, it'll look for a config.json file.  If this is the first time running the script, there won't be one, so then it'll ask you to enter your settings for the first batch synthesis, starting with the compatible voices that match the language code from your .csv, e.g. en), followed by style (if applicable), speed multiplier, leading and trailing time, and Ethos version.
 
-6. Follow the on-screen prompts.  It's fairly straight-forward.
+6. Follow the on-screen prompts.  It's fairly straight-forward.  Once all config options are entered, it will save your settings to a config file so that you don't have to enter them every time.  
    
 ### Common Errors:
 Error 429: The Azure F0 (Free) pricing tier is limited to 20 requests per minute.  This script runs considerably faster than that, so every once in a while you will get Error 429.  Just let the script keep running and it will retry in a few seconds.
