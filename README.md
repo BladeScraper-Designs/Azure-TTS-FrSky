@@ -48,7 +48,7 @@ At the top of the file, find this section, and replace yourkey and yourregion wi
 
 4. Once the key and region files are written, it will begin reading your .csv and the voices.json file. The voices.json file is a list of voices supported by Azure TTS.  
 
-5. Once it's gathered the info, it'll look for a config.json file.  If this is the first time running the script, there won't be one, so then it'll ask you to enter your settings for the first batch synthesis, starting with the compatible voices that match the language code from your .csv, e.g. en).
+5. Once it's gathered the info, it'll look for a config.json file.  If this is the first time running the script, there won't be one, so then it'll ask you to enter your settings for the first batch synthesis, starting with the compatible voices that match the language code from your .csv, e.g. en), followed by style (if applicable), speed multiplier, leading and trailing time, and Ethos version.
 
 6. Follow the on-screen prompts.  It's fairly straight-forward.
    
