@@ -74,14 +74,12 @@ Once the script is completed, the synthesized audio can be found in the 'out' fo
 
 ## Other Notes
 1. This is a fairly simple script, and there is little special treatment or optimizations for the output audio.  It simply reads from the .csv and sends that information straight to Azure for processing, with your configuration options added.
-   
-2. The script detects existing .wav files and skips synthesis if the file already exists in that location.  As such, if you want to change only a single audio file (e.g. you don't like the phrase/words used in the .csv originally, or you want to make a custom version of it), you can simply delete that .wav and run the script again after changing that entry in the .csv, and it will only generate that single new file.  This prevents waste of precious characters, the quantity of which are limited by your Azure subscription.
-![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/1201e443-1fd5-49aa-b103-d07ba317ab99)
+   (https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/1201e443-1fd5-49aa-b103-d07ba317ab99)
 
-3. The script also detects changes in your .csv file compared to last run.  If it detects either a changed text to play on an existing file, or detects a new row, it only runs sythesis on the changed/added rows.
+2. The script detects changes in your .csv file compared to last run.  If it detects either a changed text to play on an existing file, or detects a new row, it only runs sythesis on the changed/added rows. 
 ![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/4fc7b555-ba87-4c4a-9b9e-fd83b096a4dd)
 
-4. If no changes in your csv are detected compared to last run, it will re-run all rows but only files that have been deleted or were never synthesized will be synthesized.
+3. If no changes in your csv are detected compared to last run, it will re-run all rows but only files that have been deleted or were never synthesized will be synthesized.
 ![image](https://github.com/BladeScraper-Designs/Azure-TTS-FrSky/assets/40482965/38bac67b-fbc2-43b5-a7c3-d50428feae61)
 
 
