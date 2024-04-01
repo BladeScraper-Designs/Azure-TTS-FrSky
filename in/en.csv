@@ -260,10 +260,14 @@ system/watts.wav,watts
 armed.wav,armed
 auto.wav,auto
 autorotate.wav,autorotation
+battery-low.wav,battery low
+battery-critical.wav,battery critical
+battery.wav,battery
 brakes-off.wav,brakes off
 brakes-on.wav,brakes on
 butterfly-off.wav,butterfly off
 butterfly-on.wav,butterfly on
+critical.wav,critical
 choke-off.wav,choke off
 choke-on.wav,choke on
 disarmed.wav,disarmed
@@ -275,6 +279,8 @@ flaps-5.wav,flaps five
 flaps-full.wav,flaps full
 flaps-half.wav,flaps half
 flaps-up.wav,flaps up
+flight-batt-low.wav,flight battery low
+flight-batt-crit.wav,flight battery critical
 flip.wav,flip
 fm-1.wav,flight mode one
 fm-10.wav,flight mode ten
@@ -332,6 +338,12 @@ pattern.wav,pattern
 rate-high.wav,high rates
 rate-low.wav,low rates
 rate-mid.wav,mid rates
+rx-batt-low.wav,receiver battery low
+rx-batt-crit.wav,receiver battery critical
+rx-batt.wav,receiver battery
+rx-volt-low.wav,receiver voltage low
+rx-volt-crit.wav,receiver voltage critical
+rx-volt.wav,receiver voltage
 rescue.wav,rescue
 rth.wav,return to home
 self-level-mode.wav,self leveling mode
@@ -343,17 +355,24 @@ telemetry.wav,telemetry
 telemetry-log-off.wav,telemetry logging off
 telemetry-log-on.wav,telemetry logging on
 throttle-active.wav,throttle active
+throttle-disabled.wav,throttle disabled
+throttle-enabled.wav,throttle enabled
 throttle-cut.wav,throttle cut
 throttle-hold.wav,throttle hold
 throttle-idle.wav,throttle idle
 timer1-reset.wav,timer 1 reset
 timer2-reset.wav,timer 2 reset
 timer3-reset.wav,timer 3 reset
+timer1-elapsed.wav,timer 1 elapsed
+timer2-elapsed.wav,timer 2 elapsed
+timer3-elapsed.wav,timer 3 elapsed
 turtle-off.wav,turtle mode off
 turtle-on.wav,turtle mode on
 vario-off.wav,vario off
 vario-on.wav,vario on
 vtx-off.wav,VTX off
-vtx-on.wav,VTX on
+vtx-25.wav,VTX 25 milliwatts
+vtx-200.wav,VTX 200 milliwatts
+vtx-on.wav,VTX enable
 wheel-brakes-off.wav,wheel brakes off
 wheel-brakes-on.wav,wheel brakes on
