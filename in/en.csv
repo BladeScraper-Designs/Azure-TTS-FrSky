@@ -248,8 +248,8 @@ system/throttle-warning.wav,Throttle not idle
 system/trainer-lost.wav,Trainer lost
 system/trainer-recovered.wav,Trainer recovered
 system/trim-center.wav,trim center
-system/trim-max.wav,max reached
-system/trim-min.wav,min reached
+system/trim-max.wav,maximum trim reached
+system/trim-min.wav,minimum trim reached
 system/up.wav,up
 system/vfr-low-warning.wav,VFR low warning
 system/volt.wav,volt
@@ -257,6 +257,9 @@ system/volts.wav,volts
 system/watt.wav,watt
 system/watts.wav,watts
 3d.wav,3D
+air.wav,air
+acro.wav,acro
+angle.wav,angle
 armed.wav,armed
 auto.wav,auto
 autorotate.wav,autorotation
@@ -270,7 +273,10 @@ butterfly-on.wav,butterfly on
 critical.wav,critical
 choke-off.wav,choke off
 choke-on.wav,choke on
-disarmed.wav,disarmed
+disarmed.wav,dis armed
+esc.wav,E S C
+esc-hot.wav,E S C temperature warning
+esc-crit.wav,E S C temperature critical
 flaps-1.wav,flaps one
 flaps-2.wav,flaps two
 flaps-3.wav,flaps three
@@ -314,6 +320,7 @@ fm-thermal-left.wav,flight mode thermal left
 fm-thermal-right.wav,flight mode thermal right
 gear-down.wav,gear down
 gear-up.wav,gear up
+horizon.wav,horizon
 idle-up-1.wav,idle up one
 idle-up-2.wav,idle up two
 idle-up-3.wav,idle up three
@@ -354,6 +361,8 @@ take-off.wav,take off
 telemetry.wav,telemetry
 telemetry-log-off.wav,telemetry logging off
 telemetry-log-on.wav,telemetry logging on
+temp-warn.wav,temperature warning
+temp-crit.wav,temperature critical
 throttle-active.wav,throttle active
 throttle-disabled.wav,throttle disabled
 throttle-enabled.wav,throttle enabled
