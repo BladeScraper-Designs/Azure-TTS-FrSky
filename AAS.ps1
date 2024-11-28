@@ -458,12 +458,3 @@ function Start-Synthesis {
 
 # Show the window
 $window.ShowDialog() | Out-Null
-
-$voicesJson = Get-Content -Raw -Path $voicesJsonPath | ConvertFrom-Json
-Start-Sleep -Seconds 0.25
-
-# Get the list of available ShortNames
-$ShortNames = $voicesJson | Select-Object -ExpandProperty ShortName
-
-# Prompt the user to press Enter to close the window
-Read-Host "`nPress Enter to close"
