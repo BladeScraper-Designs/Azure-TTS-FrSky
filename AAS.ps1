@@ -1,27 +1,49 @@
 #### Welcome Message ####
-Write-Host "Azure TTS Script for FrSky Ethos RC Transmitters"
+Write-Host "`nAdvanced Audio Suite (AAS) - Speech Synthesis Script for RC Transmitters"
+Write-Host "Starting..."
 Start-Sleep -Seconds 1.0
 
-Write-Host "`nChecking for Azure key and region files..."
-Start-Sleep -Seconds 0.25
-$keyFilePath = Join-Path $PSScriptRoot "key"
-$regionFilePath = Join-Path $PSScriptRoot "region"
-if (!(Test-Path $keyFilePath) -or !(Test-Path $regionFilePath)) {
-    Write-Host "Key and region files not found. Sending spx config commands..."
-    Write-Host "`n"
-    # Write spx config commands
-    spx --% config @key --set yourkey
-    spx --% config @region --set yourregion
-}
-else {
-    Write-Host "Key and region files found. Continuing..."
-    Start-Sleep -Seconds 1.0
+
+#### Check Credentials ####
+Write-Host "Checking Azure credentials..."
+
+$credentialsFilePath = Join-Path $PSScriptRoot "usr\credentials.json"
+
+# Check if the key_region.json file exists
+if (!(Test-Path $credentialsFilePath)) {
+    # Create the key_region.json file with default values
+    Write-Host "`nCredentials file not found.  Creating 'usr/credentials.json'."
+    $defaultCredentials = @{
+        Key = "yourkey"
+        Region = "yourregion"
+    }
+    $defaultCredentials | ConvertTo-Json | Set-Content -Path $credentialsFilePath
+
+    # Prompt the user to enter their Azure key and region
+    $key = Read-Host "Please enter your Azure key"
+    $region = Read-Host "Please enter your Azure region"
+    $credentialsData = @{
+        Key = $key
+        Region = $region
+    }
+    # Save the updated key and region to the JSON file
+    $credentialsData | ConvertTo-Json | Set-Content -Path $credentialsFilePath
+} else {
+    # Read the key and region from the JSON file
+    $credentialsData = Get-Content -Raw -Path $credentialsFilePath | ConvertFrom-Json
+    $key = $credentialsData.Key
+    $region = $credentialsData.Region
 }
 
-#### Initial read of .json and .csv files to retrieve region and shortnames ####
+if (!(Test-Path (Join-Path $PSScriptRoot "key")) -or !(Test-Path (Join-Path $PSScriptRoot "region"))) {
+    Write-Host "`nspx key and/or region files not found.  Setting them based on info in 'usr/credentials.json'"
+    $commandKey = "spx --% config @key --set $key"
+    $commandRegion = "spx --% config @region --set $region"
+    Invoke-Expression $commandKey > $null
+    Invoke-Expression $commandRegion > $null
+    Write-Host "Azure Key and Region set."
+}
 
-# Read the contents of "voices.json"
-Write-Host "`nReading voices.json to determine available voices..."
 $voicesJsonPath = Join-Path $PSScriptRoot "in/voices.json"
 $voicesJson = Get-Content -Raw -Path $voicesJsonPath | ConvertFrom-Json
 Start-Sleep -Seconds 0.25
@@ -29,7 +51,6 @@ Start-Sleep -Seconds 0.25
 # Get the list of available ShortNames
 $shortNames = $voicesJson | Select-Object -ExpandProperty ShortName
 
-Write-Host "Reading .csv file to determine region..."
 # get full CSV path and name
 $csvFilePath = Join-Path $PSScriptRoot "in\*.csv"
 $csvFileName = Get-ChildItem -Path $csvFilePath -Filter "*.csv" | Select-Object -ExpandProperty Name
@@ -53,7 +74,7 @@ if ($matchingShortNames.Count -eq 0) {
 $configFilePath = "config.json"
 
 # Check if config.json exists
-Write-Host "Reading config file..."
+Write-Host "Reading config..."
 Start-Sleep -Seconds 0.5
 
 if (Test-Path $configFilePath) {
@@ -68,14 +89,25 @@ if (Test-Path $configFilePath) {
     $selectedpostSilenceLength = $configData.postSilenceLength
     Write-Host "`nConfiguration retrieved from config.json:"
     Write-Host "`nShortName:         $selectedShortName"
-    Write-Host "Style:             $(if ($selectedStyle) { $selectedStyle } else { 'none' })"
-    Write-Host "Speed Multiplier:  $($selectedSpeed)x"
-    Write-Host "Leading-Silence:       $($selectedPreSilenceLength)ms"
-    Write-Host "Trailing-Silence:      $($selectedPostSilenceLength)ms"
+    Write-Host "Style:               $(if ($selectedStyle) { $selectedStyle } else { 'none' })"
+    Write-Host "Speed Multiplier:    $($selectedSpeed)x"
+    Write-Host "Leading-Silence:     $($selectedPreSilenceLength)ms"
+    Write-Host "Trailing-Silence:    $($selectedPostSilenceLength)ms"
 }
 
-# If config.json does not exist, begin config routine
-else {
+if (Test-Path $configFilePath) {
+    $deleteConfig = Read-Host "`nTo continue with this configuration, press Enter. To delete the existing config and create a new one, type 'config' and press Enter."
+    if ($deleteConfig -eq 'config') {
+        Remove-Item -Path $configFilePath -Force
+        Write-Host "`nConfig file deleted. Recreating config..."
+    }
+    else {
+        Write-Host "`nContinuing with existing configuration..."
+        Write-Host "`n******************************************************************"
+    }
+}
+
+if (-not (Test-Path $configFilePath)) {
     # 
     Write-Host "`nNo config file found.  Follow the next instructions."
     Start-Sleep -Seconds 2
@@ -177,15 +209,17 @@ else {
 
     # Convert the hashtable to JSON and save it to the config.json file
     $configData | ConvertTo-Json | Set-Content -Path $configFilePath
-    Write-Host "`nConfiguration saved to config.json.  To change the configuration, delete the config.json file and run the script again, or edit the .json file directly."
+    Write-Host "`nConfiguration saved to config.json.  To change the configuration, run the script again and type 'config' when prompted, or delete the config.json file."
     Write-Host "`n******************************************************************"
 }
 
-Write-Host "`nConfiguring output based on config settings..."
+# Get the language, region, and voice from the selected ShortName and set the base file path for synthesized files
+$shortNameParts = $selectedShortName -split '-'
+$language = $shortNameParts[0]
+$region = $shortNameParts[1]
+$voiceName = $shortNameParts[2]
 
-# Get the locale (en-US) and region (US) for the selected ShortName
-$selectedLocale = ($voicesJson | Where-Object { $_.ShortName -eq $selectedShortName }).Locale
-$selectedLocaleRegion = ($selectedLocale -split '-')[1]
+$baseFilePath = "out/$language/$region/"
 
 # Read the CSV file
 Get-Content -Path $csvFilePath | Out-Null
@@ -200,10 +234,6 @@ if (-not (Test-Path $oldDirPath)) {
 if (-not (Test-Path "$oldDirPath/lastCsvData.csv")) {
     $csvData | Export-Csv -Path "$oldDirPath/lastCsvData.csv" -NoTypeInformation
 }
-
-# Get base output path from $languageCode and $selectedLocaleRegion
-$baseFilePath = "out/"
-$baseFilePath += $languageCode + "/" + $selectedLocaleRegion.ToLower() + "/"
 
 #### Check csvData.csv and compare to $csvData to determine if any changes have been made ####
 Write-Host "`nChecking for changes in .csv file from last run..."
@@ -283,9 +313,11 @@ for ($i = 0; $i -lt $csvData.Count; $i++) {
 
     # If audio file already exists for this iteration, skip it.
     if (Test-Path $filePath) {
-        Write-Host "File $filePath already exists. Skipping synthesis."
+        Write-Host "`nFile $filePath already exists. Skipping synthesis."
         continue
     }
+
+    Write-Host "`nSynthesizing $filePath..." -NoNewline
 
     # Get the subfolder path from the file path
     $folderPath = Split-Path -Path $filePath -Parent
@@ -296,18 +328,18 @@ for ($i = 0; $i -lt $csvData.Count; $i++) {
 
     $textToGenerate = $csvData[$i].PSObject.Properties.Value[1]
 
-    # Check if the generated file size is greater than 1KB and retry if it is not (up to 10 retries)
+    # Check if the generated file size is greater than 1KB and retry if it is not (up to 3 retries)
     $retryCount = 0
     while (-not ($synthesisFailed)) {
-        if ($retryCount -eq 10) {
+        if ($retryCount -eq 3) {
             Write-Host "Audio synthesis failed. Retry limit reached. Re-run script to try again."
             Remove-Item -Path $filePath -Force
             break
         }
-        spx synthesize --ssml   "<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='$selectedLocale'>
+        spx synthesize --ssml   "<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='$language-$region'>
                                 <voice name='$selectedShortName'>
                                     <mstts:express-as style='$selectedStyle' styledegree='2'>
-                                        <lang xml:lang='$selectedLocale'>
+                                        <lang xml:lang='$language-$region'>
                                             <prosody rate='$selectedSpeed'>
                                                 <mstts:silence type='Leading-exact' value='$selectedPreSilenceLength'/>
                                                     $textToGenerate
@@ -316,9 +348,7 @@ for ($i = 0; $i -lt $csvData.Count; $i++) {
                                         </lang>
                                     </mstts:express-as>
                                 </voice>
-                            </speak>" --audio output $filePath
-                            
-        Write-Host "File written to $filePath"
+                            </speak>" --audio output $filePath > $null 
 
         # Check if the file size is greater than 1KB (to detect if there was an error during synthesis)
         if ((Get-Item $filePath).Length -lt 1024) {
@@ -335,7 +365,7 @@ for ($i = 0; $i -lt $csvData.Count; $i++) {
     }
     # Reset $synthesisFailed for the next iteration
     $synthesisFailed = $false 
- 
+    Write-Host " Done"
 }
 
 #### Azure Logging Cleanup ####
@@ -355,8 +385,10 @@ Move-Item -Path "*.log" -Destination $logFolderPath -Force
 $lastCsvDataPath = "old/lastCsvData.csv"
 Copy-Item -Path $csvFilePath -Destination $lastCsvDataPath -Force
 
+
 # Notify user that the job is done.
-Write-Host "`nSpeech synthesis complete.  Synthesized audio can be found in the 'out' folder."
+$lowerRegion = $region.ToLower()
+Write-Host "`nSpeech synthesis complete.  Synthesized audio can be found in 'out/$language/$lowerRegion'."
 
 # Prompt the user to press Enter to close the window
 Read-Host "`nPress Enter to close"

@@ -3,6 +3,6 @@ old
 
 key
 region
-config.json
+*.json
 
 log-*
