@@ -3,17 +3,24 @@ Write-Host "Starting Advanced Audio Suite..."
 #### Check Credentials ####
 Write-Host "Checking Azure credentials..." -NoNewline
 
-$credentialsFilePath = Join-Path $PSScriptRoot "config/credentials.json"
+$configDirectoryPath = "$PSScriptRoot/config"
+$credentialsFilePath = "$configDirectoryPath/credentials.json"
+
+# Ensure the config directory exists
+if (!(Test-Path $configDirectoryPath)) {
+    New-Item -ItemType Directory -Path $configDirectoryPath -Force | Out-Null
+}
+
 if (!(Test-Path $credentialsFilePath)) {
-    Write-Host "`nCredentials file not found. Creating 'config/credentials.json'."
+    Write-Host "`nCredentials file not found.  Creating..."
     $defaultCredentials = @{
         Key = "yourkey"
         Region = "yourregion"
     }
     $defaultCredentials | ConvertTo-Json | Set-Content -Path $credentialsFilePath
 
-    $key = Read-Host "Please enter your Azure key"
-    $region = Read-Host "Please enter your Azure region"
+    $key = Read-Host "Please enter your Azure Speech resource group key"
+    $region = Read-Host "Please enter your Azure Speech resource group region"
     $credentialsData = @{
         Key = $key
         Region = $region
@@ -42,6 +49,11 @@ if (-not (Test-Path $voicesJsonPath)) {
     Write-Host "Getting voices from spx..." -NoNewline
     $output = spx synthesize --voices
     $path = "data/voices.json"
+    # Ensure the data directory exists
+    $dataDirectoryPath = Join-Path $PSScriptRoot "data"
+    if (-not (Test-Path $dataDirectoryPath)) {
+        New-Item -ItemType Directory -Path $dataDirectoryPath -Force | Out-Null
+    }
 
     # Combine the output into a single string
     $outputText = $output -join "`n"
@@ -499,7 +511,6 @@ function Clear-Logs {
     $logFiles = Get-ChildItem -Path $PSScriptRoot -Filter "log-*" -File
     foreach ($file in $logFiles) {
         Remove-Item -Path $file.FullName -Force
-        Write-Host "Deleted log file: $($file.FullName)"
     }
 }
 
