@@ -1,6 +1,8 @@
 out
+old
+
 key
 region
-log-*
-old
 config.json
+
+log-*
