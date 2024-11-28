@@ -71,7 +71,7 @@ if ($matchingShortNames.Count -eq 0) {
 
 #### Config ####
 
-$configFilePath = "config.json"
+$configFilePath = "usr/config.json"
 
 # Check if config.json exists
 Write-Host "Reading config..."
