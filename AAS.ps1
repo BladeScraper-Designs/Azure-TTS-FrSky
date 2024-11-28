@@ -300,17 +300,12 @@ $btnStartSynthesis.Add_Click({
     # Perform synthesis operation here
     Start-Synthesis -Language $LanguageCode -Region $Region -ShortName $Voice -Style $Style -Speed $Speed -PostSilence $PostSilence -PreSilence $PreSilence
     
-    # Clean up  Azure Logs
-    Write-Host "`nCleaning up..."
-    $logFiles = Get-ChildItem -Path $PSScriptRoot -Filter "log-*" -File
-    foreach ($file in $logFiles) {
-        Remove-Item -Path $file.FullName -Force
-        Write-Host "Deleted log file: $($file.FullName)"
-    }
-    
     # Print Complete message
     $LanguageCode = $languageMap.Keys | Where-Object { $languageMap[$_] -eq $Language }
     Write-Host "`nSpeech synthesis complete. Synthesized audio can be found in 'out/$LanguageCode/$Region'."
+    
+    # Clear logs after running
+    Clear-Logs
 })
 
 # Define the Start-Synthesis function
@@ -324,6 +319,7 @@ function Start-Synthesis {
         [int]$PostSilence,
         [int]$PreSilence
     )
+    Write-Host "`n*************************************************"
     Write-Host "Starting synthesis with the following settings:"
 
     Write-Host "`nLanguage: $Language"
@@ -495,6 +491,16 @@ function Save-Config {
     }
     $configFilePath = Join-Path $PSScriptRoot "config/config.json"
     $configData | ConvertTo-Json | Set-Content -Path $configFilePath
+}
+
+# Function to clean up log files
+function Clear-Logs {
+    Write-Host "`nCleaning up..."
+    $logFiles = Get-ChildItem -Path $PSScriptRoot -Filter "log-*" -File
+    foreach ($file in $logFiles) {
+        Remove-Item -Path $file.FullName -Force
+        Write-Host "Deleted log file: $($file.FullName)"
+    }
 }
 
 # Show the window
