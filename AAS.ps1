@@ -73,7 +73,7 @@ if (-not (Test-Path $voicesJsonPath)) {
     if (Test-Path -Path $path) {
         Write-Host " OK"
     } else {
-        Write-Host "Failed to create voices JSON file at $path"
+        Write-Host " Failed"
         return
     }
 } else {
@@ -81,7 +81,7 @@ if (-not (Test-Path $voicesJsonPath)) {
     if (Test-Path -Path $voicesJsonPath) {
     Write-Host " OK"
     } else {
-        Write-Host "Failed to read voices JSON file at $voicesJsonPath"
+        Write-Host " Failed"
         return
     }
 }
