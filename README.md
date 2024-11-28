@@ -1,18 +1,13 @@
-# Azure TTS FrSky
-A Powershell V7 script for using Microsoft Azure Speech Synthesis to generate Voice Packs for RC Transmitters.  
-Current Script Version: 0.5
+# Advanced Audio Suite for RC Transmitters
+This Powershell V7 script allows you to use Microsoft Azure Speech Synthesis (Text-to-Speech) to generate custom, high quality Voice Packs for RC Transmitters.  
 
-Designed, tested, and optimized for use with FrSky radios on Ethos 1.5 and 1.4.  Probably works for Open/EdgeTX too, but not tested.
+Sample audio packs for those unable or unwilling to use the script are available [here](/samples).  They are all formatted for FrSky's Ethos 1.5+ operating system, but will likely work without issues on other systems, possibly with some modifications to the folder structure.  The sample audio is based on FrSky's en.csv from their own audio generation system, but with my own added files that I feel are missing from their list.
 
-An example output has been provided: en-AU.zip<br>
-It contains the output for both Ethos 1.4 and Ethos 1.5.  Generated with the following settings:<br>
-   1. ShortName: en-AU-ElsieNeural
-   2. Style: None
-   3. Speed Multiplier: 1.25x
-   4. Leading Silence: 0ms
-   5. Trailing Silence: 25ms
-
-The in/en.csv provided has some customizations of my own, including changed text to play and added lines.  The audio files in en-AU.zip contain all of these custom changes.
+All sample audio packs are generated with the following settings unless otherwise noted:
+   1. Style: None
+   2. Speed Multiplier: 1.25x
+   3. Leading Silence: 0ms
+   4. Trailing Silence: 25ms
 
 ## Prerequesites
 1. A subscription to [Microsoft Azure](https://azure.microsoft.com/en-us/products/ai-services/text-to-speech) (Free F0 tier will suffice)<br>
