@@ -144,15 +144,6 @@ $btnStartSynthesis = $window.FindName("BtnStartSynthesis")
 $matchingStyles = @("Default", "Chat", "Narration") # Example data
 $cmbStyle.ItemsSource = $matchingStyles
 
-# Set default values
-$cmbLanguage.SelectedItem = "English"
-$cmbRegion.SelectedItem = "AU"
-$cmbVoice.SelectedItem = "ElsieNeural"
-$cmbStyle.SelectedItem = "Default"
-$txtSpeed.Text = "1.25"
-$txtPostSilence.Text = "25"
-$txtPreSilence.Text = "0"
-
 # Load voices
 $voicesJsonPath = Join-Path $PSScriptRoot "data/voices.json"
 if (-not (Test-Path $voicesJsonPath)) {
@@ -237,41 +228,77 @@ if (Test-Path $configFilePath) {
     $configData = Get-Content -Raw -Path $configFilePath | ConvertFrom-Json
 
     # Ensure the selected language exists in the language map
-    if ($languageMap.ContainsKey($configData.Language)) {
-        $cmbLanguage.SelectedItem = $languageMap[$configData.Language]
+    $languageCode = $languageMap.Keys | Where-Object { $languageMap[$_] -eq $configData.Language }
+    if ($languageCode) {
+        $Language = $configData.Language
+        $cmbLanguage.SelectedItem = $Language
     } else {
         Write-Host "Warning: Selected language from config not found in available languages. Using default."
-        $cmbLanguage.SelectedItem = "English"
+        $Language = "English"
+        $cmbLanguage.SelectedItem = $Language
     }
 
-    $cmbRegion.SelectedItem = $configData.Region
-    $cmbVoice.SelectedItem = $configData.Voice.Split('-')[-1]
-    $cmbStyle.SelectedItem = if ($null -eq $configData.Style) { "Default" } else { $configData.Style }
-    $txtSpeed.Text = $configData.Speed.ToString("0.00")
-    $txtPostSilence.Text = [string]$configData.postSilenceLength
-    $txtPreSilence.Text = [string]$configData.preSilenceLength
+    $Region = $configData.Region
+    $cmbRegion.SelectedItem = $Region
+
+    $Voice = $configData.Voice.Split('-')[-1]
+    $cmbVoice.SelectedItem = $Voice
+
+    $Style = if ($null -eq $configData.Style) { "Default" } else { $configData.Style }
+    $cmbStyle.SelectedItem = $Style
+
+    $Speed = [double]$configData.Speed
+    $txtSpeed.Text = [string]$Speed
+
+    $PostSilence = [int]$configData.PostSilence
+    $txtPostSilence.Text = [string]$PostSilence
+
+    $PreSilence = [int]$configData.PreSilence
+    $txtPreSilence.Text = [string]$PreSilence
 } else {
-    $cmbLanguage.SelectedItem = "English"
-    $cmbRegion.SelectedItem = "AU"
-    $cmbVoice.SelectedItem = "ElsieNeural"
-    $cmbStyle.SelectedItem = "Default"
-    $txtSpeed.Text = "1.25"
-    $txtPostSilence.Text = "25"
-    $txtPreSilence.Text = "0"
+    $Language = "English"
+    $cmbLanguage.SelectedItem = $Language
+
+    $Region = "AU"
+    $cmbRegion.SelectedItem = $Region
+
+    $Voice = "ElsieNeural"
+    $cmbVoice.SelectedItem = $Voice
+
+    $Style = "Default"
+    $cmbStyle.SelectedItem = $Style
+
+    $Speed = 1.25
+    $txtSpeed.Text = [string]$Speed
+
+    $PostSilence = 25
+    $txtPostSilence.Text = [string]$PostSilence
+
+    $PreSilence = 0
+    $txtPreSilence.Text = [string]$PreSilence
 }
 
 # Add event handler for the start synthesis button
 $btnStartSynthesis.Add_Click({
-    $Language = $cmbLanguage.SelectedItem 
-    $Language = $languageMap.Keys | Where-Object { $languageMap[$_] -eq $Language }
+
+    # Read the current values from the GUI
+    $Language = $cmbLanguage.SelectedItem
     $Region = $cmbRegion.SelectedItem
     $Voice = $cmbVoice.SelectedItem
-    $Style = if ($cmbStyle.SelectedItem -eq "Default") { $null } else { $cmbStyle.SelectedItem }
+    $Style = $cmbStyle.SelectedItem
+    $Speed = [double]$txtSpeed.Text
+    $PostSilence = [int]$txtPostSilence.Text
+    $PreSilence = [int]$txtPreSilence.Text
 
-    $ShortName = "$Language-$Region-$Voice"
+    # Save the current configuration to config.json
+    Save-Config
+
+    # Map the selected language back to its code
+    $LanguageCode = $languageMap.Keys | Where-Object { $languageMap[$_] -eq $Language }
+    $ShortName = "$LanguageCode-$Region-$Voice"
 
     # Perform synthesis operation here
-    Start-Synthesis -Language $Language -Region $Region -ShortName $Voice -Style $Style -Speed $Speed -PostSilence $postSilenceLength -PreSilence $preSilenceLength
+    Start-Synthesis -Language $LanguageCode -Region $Region -ShortName $Voice -Style $Style -Speed $Speed -PostSilence $PostSilence -PreSilence $PreSilence
     
     # Clean up  Azure Logs
     Write-Host "`nCleaning up..."
@@ -282,8 +309,8 @@ $btnStartSynthesis.Add_Click({
     }
     
     # Print Complete message
-    $lowerRegion = $Region.ToLower()
-    Write-Host "`nSpeech synthesis complete.  Synthesized audio can be found in 'out/$Language/$lowerRegion'."
+    $LanguageCode = $languageMap.Keys | Where-Object { $languageMap[$_] -eq $Language }
+    Write-Host "`nSpeech synthesis complete. Synthesized audio can be found in 'out/$LanguageCode/$Region'."
 })
 
 # Define the Start-Synthesis function
@@ -307,7 +334,7 @@ function Start-Synthesis {
     Write-Host "PostSilence: $PostSilence"
     Write-Host "PreSilence: $PreSilence"
 
-    $baseFilePath = "out/$Language/$Region/"
+    $baseFilePath = "out/$Language/$Region/$ShortName/"
 
         # get full CSV path and name
     $csvFilePath = Join-Path $PSScriptRoot "in\*.csv"
@@ -424,9 +451,9 @@ function Start-Synthesis {
                                         <mstts:express-as style='$Style' styledegree='2'>
                                             <lang xml:lang='$language-$region'>
                                                 <prosody rate='$Speed'>
-                                                    <mstts:silence type='Leading-exact' value='$preSilenceLength'/>
+                                                    <mstts:silence type='Leading-exact' value='$PreSilence'/>
                                                         $textToGenerate
-                                                    <mstts:silence type='Tailing-exact' value='$postSilenceLength'/>
+                                                    <mstts:silence type='Tailing-exact' value='$PostSilence'/>
                                                 </prosody>
                                             </lang>
                                         </mstts:express-as>
@@ -454,6 +481,20 @@ function Start-Synthesis {
     # Export the csvData.csv to lastCsvData.csv for examination on next run
     $lastCsvDataPath = "data/lastCsvData.csv"
     Copy-Item -Path $csvFilePath -Destination $lastCsvDataPath -Force
+}
+
+# Function to save the current configuration to config.json
+function Save-Config {
+    $configData = [ordered]@{
+        Language = $cmbLanguage.SelectedItem
+        Region = $cmbRegion.SelectedItem
+        Voice = $cmbVoice.SelectedItem
+        Speed = [double]$txtSpeed.Text
+        PostSilence = [int]$txtPostSilence.Text
+        PreSilence = [int]$txtPreSilence.Text
+    }
+    $configFilePath = Join-Path $PSScriptRoot "config/config.json"
+    $configData | ConvertTo-Json | Set-Content -Path $configFilePath
 }
 
 # Show the window

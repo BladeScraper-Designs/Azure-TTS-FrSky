@@ -1,0 +1,399 @@
+[643634]: 8ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxThreadService' as '303073113'
+[643634]: 9ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxThreadService' as '303073113'
+[643634]: 9ms SPX_DBG_TRACE_VERBOSE:  usp_tts_engine_adapter.cpp:62 CSpxUspTtsEngineAdapter::CSpxUspTtsEngineAdapter
+[643634]: 9ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxUspTtsEngineAdapter' as '919101823'
+[643634]: 9ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxWavFileWriter' as '558221231'
+[643634]: 9ms SPX_DBG_TRACE_VERBOSE:  null_audio_output.h:93 CSpxNullAudioOutput::SetFormat is called with format 0x0000020EEEB89470
+[643634]: 10ms SPX_DBG_TRACE_VERBOSE:  cloud_tts_engine_adapter.cpp:134 CSpxCloudTtsEngineAdapter::SetOutput
+[643634]: 10ms SPX_TRACE_INFO:  cloud_tts_engine_adapter.cpp:212 CSpxCloudTtsEngineAdapter::SetOutput: request format [riff-16khz-16bit-mono-pcm] has header, using raw format instead for streaming.
+[643634]: 10ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EEEB23488
+[643634]: 10ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesizer, h=0x0000020EEEB23488, p=0x0000020EEEB23488, tot=1
+[643634]: 10ms SPX_DBG_TRACE_SCOPE_EXIT:  speechapi_c_factory.cpp:548 synthesizer_create_speech_synthesizer_from_config
+[643634]: 10ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EEEB238B8
+[643634]: 10ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxNamedProperties, h=0x0000020EEEB238B8, p=0x0000020EEEB238B8, tot=3
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxAudioDataStream' as '418301898'
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  null_audio_output.h:93 CSpxNullAudioOutput::SetFormat is called with format 0x0000020EEEB89470
+[445592]: 13ms SPX_DBG_TRACE_FUNCTION:  synthesis_result.cpp:25 CSpxSynthesisResult::CSpxSynthesisResult
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxSynthesisResult' as '3874248'
+[445592]: 13ms SPX_TRACE_INFO:  thread_service.cpp:96 Started thread User with ID [69655ll]
+[445592]: 13ms SPX_TRACE_VERBOSE:  synthesizer.cpp:217 CSpxSynthesizer::ExecuteSynthesis: synthesis started, request id: fb3216773dc0445db00ddceedda81daa; text: <speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-AU'>
+                                    <voice name='en-AU-TimNeural'>
+                                        <mstts:express-as style='Default' styledegree='2'>
+                                            <lang xml:lang='en-AU'>
+                                                <prosody rate='1.15'>
+                                                    <mstts:silence type='Leading-exact' value='0'/>
+                                                        6
+                                                    <mstts:silence type='Tailing-exact' value='25'/>
+                                                </prosody>
+                                            </lang>
+                                        </mstts:express-as>
+                                    </voice>
+                                </speak>
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  synthesizer_timeout_management.cpp:32 SynthesisTimeoutManagement::SetTimeoutValues: RTF set to 2.00; frame timeout interval set to 3000 ms.
+[445592]: 13ms SPX_DBG_TRACE_FUNCTION:  synthesis_request.cpp:27 CSpxSynthesisRequest::CSpxSynthesisRequest
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxSynthesisRequest' as '211460561'
+[445592]: 13ms SPX_DBG_TRACE_FUNCTION:  synthesis_request.cpp:37 CSpxSynthesisRequest::Init
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  usp_tts_engine_adapter.cpp:102 CSpxUspTtsEngineAdapter::Speak
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  usp_tts_engine_adapter.cpp:120 CSpxUspTtsEngineAdapter::Speak: start to send synthesis request, request id : fb3216773dc0445db00ddceedda81daa, try: 0
+[69655]: 13ms SPX_DBG_TRACE_SCOPE_ENTER:  synthesizer.cpp:1194 DispatchEvent task started...
+[445592]: 13ms SPX_DBG_TRACE_FUNCTION:  synthesis_request.cpp:94 CSpxSynthesisRequest::GetInputContent
+[69655]: 13ms SPX_DBG_TRACE_VERBOSE:  synthesizer.cpp:569 [0000020EEEB23450]CSpxSynthesizer::CSpxSynthesizer::FireResultEvent
+[445592]: 13ms SPX_DBG_TRACE_FUNCTION:  synthesis_result.cpp:25 CSpxSynthesisResult::CSpxSynthesisResult
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxSynthesisResult' as '3874248'
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  usp_tts_engine_adapter.cpp:223 SSML sent to TTS cognitive service: <speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-AU'>
+                                    <voice name='en-AU-TimNeural'>
+                                        <mstts:express-as style='Default' styledegree='2'>
+                                            <lang xml:lang='en-AU'>
+                                                <prosody rate='1.15'>
+                                                    <mstts:silence type='Leading-exact' value='0'/>
+                                                        6
+                                                    <mstts:silence type='Tailing-exact' value='25'/>
+                                                </prosody>
+                                            </lang>
+                                        </mstts:express-as>
+                                    </voice>
+                                </speak>
+[69655]: 13ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxSynthesisEventArgs' as '657912386'
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  usp_tts_engine_adapter.cpp:602 CSpxUspTtsEngineAdapter::UspInitialize: this=0x0000020EEEF66620
+[69655]: 13ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EEEB7AB70
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxNamedProperties::GetStringValue: this=0x0000020EEEB238B8; name='SPEECH-SubscriptionKey'; value='**********************************************************************************KX'
+[69655]: 13ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesisEventArgs, h=0x0000020EEEB7AB70, p=0x0000020EEEB7AB70, tot=1
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxNamedProperties::GetStringValue: this=0x0000020EEEF66688; name='AZAC-SDK-PROGRAMMING-LANGUAGE'; value='C#'
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxNamedProperties::GetStringValue: this=0x0000020EEEF66688; name='SPEECH-UserDefinedQueryParameters'; value='traffictype=spx'
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxPropertyBagImpl::SetStringValue: this=0x0000020EEEF66688; name='HttpHeader#User-agent'; value='spx SpeechSDK-C#/1.41.1 Windows Client 8'
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxNamedProperties::FindPrefix: this=0x0000020EEEF66688; name='User-agent'; value='spx SpeechSDK-C#/1.41.1 Windows Client 8'
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxUspCallbackWrapper' as '710381509'
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxNamedProperties::GetStringValue: this=0x0000020EEEB238B8; name='SPEECH-Region'; value='eastus'
+[445592]: 13ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxUspConnection' as '792041254'
+[445592]: 13ms SPX_TRACE_INFO:  usp_connection.cpp:485 Microsoft::CognitiveServices::Speech::USP::CSpxUspConnection::Connect: entering...
+[445592]: 13ms SPX_TRACE_INFO:  usp_connection.cpp:502 Adding subscription key headers
+[445592]: 13ms SPX_TRACE_INFO:  usp_connection.cpp:537 Set a user defined HTTP header 'User-agent':'spx SpeechSDK-C#/1.41.1 Windows Client 8'
+[445592]: 13ms SPX_TRACE_INFO:  usp_connection.cpp:543 Set an underlying io option 'tcp_nodelay'
+[445592]: 13ms SPX_TRACE_INFO:  usp_connection.cpp:552 connectionUrl=wss://eastus.tts.speech.microsoft.com/cognitiveservices/websocket/v1
+[445592]: 14ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxTelemetry' as '151041793'
+[445592]: 14ms SPX_DBG_TRACE_SCOPE_ENTER:  web_socket.cpp:216 CSpxWebSocket::CSpxWebSocket
+[445592]: 14ms SPX_DBG_TRACE_SCOPE_EXIT:  web_socket.cpp:216 CSpxWebSocket::CSpxWebSocket
+[445592]: 14ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxWebSocket' as '482598724'
+[445592]: 14ms SPX_TRACE_SCOPE_ENTER:  uws_web_socket.cpp:31 WebSocketAdapter::UwsWebSocket::UwsWebSocket
+[445592]: 14ms SPX_TRACE_SCOPE_EXIT:  uws_web_socket.cpp:31 WebSocketAdapter::UwsWebSocket::UwsWebSocket
+[445592]: 14ms SPX_TRACE_SCOPE_ENTER:  uws_web_socket.cpp:43 WebSocketAdapter::UwsWebSocket::Initialize
+[445592]: 14ms SPX_TRACE_SCOPE_EXIT:  uws_web_socket.cpp:43 WebSocketAdapter::UwsWebSocket::Initialize
+[445592]: 14ms SPX_TRACE_SCOPE_ENTER:  uws_web_socket.cpp:221 WebSocketAdapter::UwsWebSocket::SetRequestHeader
+[445592]: 14ms SPX_TRACE_SCOPE_EXIT:  uws_web_socket.cpp:221 WebSocketAdapter::UwsWebSocket::SetRequestHeader
+[445592]: 14ms SPX_TRACE_SCOPE_ENTER:  uws_web_socket.cpp:221 WebSocketAdapter::UwsWebSocket::SetRequestHeader
+[445592]: 14ms SPX_TRACE_SCOPE_EXIT:  uws_web_socket.cpp:221 WebSocketAdapter::UwsWebSocket::SetRequestHeader
+[445592]: 14ms SPX_TRACE_SCOPE_ENTER:  uws_web_socket.cpp:221 WebSocketAdapter::UwsWebSocket::SetRequestHeader
+[445592]: 14ms SPX_TRACE_SCOPE_EXIT:  uws_web_socket.cpp:221 WebSocketAdapter::UwsWebSocket::SetRequestHeader
+[445592]: 14ms SPX_TRACE_INFO:  thread_service.cpp:96 Started thread Background with ID [541214ll]
+[69655]: 14ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA7930
+[445592]: 14ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxPropertyBagImpl::SetStringValue: this=0x0000020EEEB238B8; name='SPEECH-ConnectionUrl'; value='wss://eastus.tts.speech.microsoft.com/cognitiveservices/websocket/v1'
+[69655]: 14ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesisResult, h=0x0000020EECAA7930, p=0x0000020EECAA7930, tot=1
+[541214]: 14ms SPX_TRACE_INFO:  web_socket.cpp:800 CSpxWebSocket::DoWork: open transport.
+[445592]: 14ms SPX_DBG_TRACE_VERBOSE:  usp_tts_engine_adapter.cpp:425 speech.config {"context":{"system":{"version":"1.41.1","name":"SpeechSDK","build":"Windows-x64"},"os":{"platform":"Windows","name":"Client","version":"8"}}}
+[541214]: 14ms SPX_TRACE_INFO:  web_socket.cpp:479 Start to open websocket. WebSocket: 0xeef8b080, wsio handle: 0xeeb7ce60
+[541214]: 14ms SPX_TRACE_SCOPE_ENTER:  uws_web_socket.cpp:149 WebSocketAdapter::UwsWebSocket::Open
+[445592]: 14ms SPX_DBG_TRACE_VERBOSE:  usp_tts_engine_adapter.cpp:542 speech.config='{"context":{"system":{"version":"1.41.1","name":"SpeechSDK","build":"Windows-x64"},"os":{"platform":"Windows","name":"Client","version":"8"}}}'
+[445592]: 14ms SPX_DBG_TRACE_VERBOSE:  usp_tts_engine_adapter.cpp:542 synthesis.context='{"synthesis":{"audio":{"outputFormat":"raw-16khz-16bit-mono-pcm","metadataOptions":{"visemeEnabled":false,"bookmarkEnabled":false,"wordBoundaryEnabled":false,"punctuationBoundaryEnabled":false,"sentenceBoundaryEnabled":false,"sessionEndEnabled":true}},"language":{"autoDetection":false}}}'
+[445592]: 14ms SPX_DBG_TRACE_VERBOSE:  usp_tts_engine_adapter.cpp:507 ssml <speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-AU'>
+                                    <voice name='en-AU-TimNeural'>
+                                        <mstts:express-as style='Default' styledegree='2'>
+                                            <lang xml:lang='en-AU'>
+                                                <prosody rate='1.15'>
+                                                    <mstts:silence type='Leading-exact' value='0'/>
+                                                        6
+                                                    <mstts:silence type='Tailing-exact' value='25'/>
+                                                </prosody>
+                                            </lang>
+                                        </mstts:express-as>
+                                    </voice>
+                                </speak>
+[445592]: 14ms SPX_DBG_TRACE_VERBOSE:  usp_tts_engine_adapter.cpp:542 ssml='<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-AU'>
+                                    <voice name='en-AU-TimNeural'>
+                                        <mstts:express-as style='Default' styledegree='2'>
+                                            <lang xml:lang='en-AU'>
+                                                <prosody rate='1.15'>
+                                                    <mstts:silence type='Leading-exact' value='0'/>
+                                                        6
+                                                    <mstts:silence type='Tailing-exact' value='25'/>
+                                                </prosody>
+                                            </lang>
+                                        </mstts:express-as>
+                                    </voice>
+                                </speak>'
+[69655]: 15ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA7950
+[69655]: 15ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxNamedProperties, h=0x0000020EECAA7950, p=0x0000020EECAA7950, tot=4
+[69655]: 15ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eeeb7ab70
+[69655]: 16ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EEEB7AB70
+[69655]: 16ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxSynthesisEventArgs, h=0x0000020EEEB7AB70, p=0x0000020EEEB7AB70, tot=0
+[69655]: 16ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eecaa7950
+[69655]: 16ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EECAA7950
+[69655]: 16ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxNamedProperties, h=0x0000020EECAA7950, p=0x0000020EECAA7950, tot=3
+[69655]: 16ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eecaa7930
+[69655]: 16ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EECAA7930
+[69655]: 16ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxSynthesisResult, h=0x0000020EECAA7930, p=0x0000020EECAA7930, tot=0
+[69655]: 16ms SPX_DBG_TRACE_SCOPE_EXIT:  synthesizer.cpp:1194 DispatchEvent task complete!
+[541214]: 56ms SPX_TRACE_SCOPE_EXIT:  uws_web_socket.cpp:149 WebSocketAdapter::UwsWebSocket::Open
+[541214]: 56ms SPX_TRACE_INFO:  usp_connection.cpp:787 Create requestId  for messageType 0
+[541214]: 222ms SPX_TRACE_SCOPE_ENTER:  uws_web_socket.cpp:247 WebSocketAdapter::UwsWebSocket::OnWebSocketOpened
+[541214]: 222ms SPX_TRACE_INFO:  web_socket.cpp:880 Opening websocket completed. TransportRequest: 0xeef8b080, wsio handle: 0xeeb7ce60, time: 2024-11-28T23:01:04.7085044Z
+[541214]: 222ms SPX_TRACE_SCOPE_ENTER:  uws_web_socket.cpp:215 WebSocketAdapter::UwsWebSocket::SetOption
+[541214]: 222ms SPX_TRACE_SCOPE_EXIT:  uws_web_socket.cpp:215 WebSocketAdapter::UwsWebSocket::SetOption
+[541214]: 222ms SPX_TRACE_INFO:  usp_connection.cpp:902 TS:209, OnConnected: connection:0xeca95bd0
+[541214]: 222ms SPX_TRACE_SCOPE_EXIT:  uws_web_socket.cpp:247 WebSocketAdapter::UwsWebSocket::OnWebSocketOpened
+[541214]: 222ms SPX_TRACE_VERBOSE:  web_socket.cpp:540 [0x0000020EEEF8B080] Web socket sending message. Time: 2024-11-28T23:01:04.7086799Z, TimeInQueue: 165ms, IsBinary: 0, Path: speech.config, Size:204 B
+[69655]: 222ms SPX_DBG_TRACE_SCOPE_ENTER:  synthesizer.cpp:1194 DispatchEvent task started...
+[69655]: 222ms SPX_DBG_TRACE_SCOPE_ENTER:  synthesizer.cpp:658 CSpxSynthesizer::FireConnectionChanged
+[69655]: 222ms SPX_DBG_TRACE_VERBOSE:  synthesizer.cpp:659 CSpxSynthesizer::FireConnectionChanged: Connected
+[541214]: 222ms SPX_TRACE_VERBOSE:  web_socket.cpp:649 [0x0000020EEEF8B080] Web socket send message completed. Result: 0, SendTime: 0ms, IsBinary: 0, Path: speech.config, Size:204 B
+[69655]: 222ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxConnectionEventArgs' as '189265475'
+[69655]: 222ms SPX_DBG_TRACE_SCOPE_EXIT:  synthesizer.cpp:658 CSpxSynthesizer::FireConnectionChanged
+[69655]: 222ms SPX_DBG_TRACE_SCOPE_EXIT:  synthesizer.cpp:1194 DispatchEvent task complete!
+[541214]: 222ms SPX_TRACE_VERBOSE:  web_socket.cpp:540 [0x0000020EEEF8B080] Web socket sending message. Time: 2024-11-28T23:01:04.7088271Z, TimeInQueue: 166ms, IsBinary: 0, Path: synthesis.context, Size:400 B
+[541214]: 223ms SPX_TRACE_VERBOSE:  web_socket.cpp:649 [0x0000020EEEF8B080] Web socket send message completed. Result: 0, SendTime: 0ms, IsBinary: 0, Path: synthesis.context, Size:400 B
+[541214]: 223ms SPX_TRACE_VERBOSE:  web_socket.cpp:540 [0x0000020EEEF8B080] Web socket sending message. Time: 2024-11-28T23:01:04.7089193Z, TimeInQueue: 166ms, IsBinary: 0, Path: ssml, Size:1084 B
+[541214]: 223ms SPX_TRACE_VERBOSE:  web_socket.cpp:649 [0x0000020EEEF8B080] Web socket send message completed. Result: 0, SendTime: 0ms, IsBinary: 0, Path: ssml, Size:1084 B
+[541214]: 269ms SPX_TRACE_VERBOSE:  usp_web_socket.cpp:209 USP message received. IsBinary=0, Path=turn.start, Size=186 B, Time=2024-11-28T23:01:04.7549753Z
+[541214]: 269ms SPX_TRACE_INFO:  usp_connection.cpp:993 Service originated request received with requestId: fb3216773dc0445db00ddceedda81daa
+[541214]: 269ms SPX_TRACE_INFO:  usp_connection.cpp:1008 Response Message: content type: application/json; charset=utf-8.
+[541214]: 269ms SPX_TRACE_INFO:  usp_connection.cpp:1028 TS:256 Response Message: path: turn.start, size: 75.
+[541214]: 284ms SPX_TRACE_VERBOSE:  usp_web_socket.cpp:209 USP message received. IsBinary=0, Path=response, Size=242 B, Time=2024-11-28T23:01:04.7703034Z
+[541214]: 284ms SPX_TRACE_INFO:  usp_connection.cpp:1008 Response Message: content type: application/json; charset=utf-8.
+[541214]: 284ms SPX_TRACE_INFO:  usp_connection.cpp:1028 TS:271 Response Message: path: response, size: 133.
+[541214]: 347ms SPX_TRACE_VERBOSE:  usp_web_socket.cpp:209 USP message received. IsBinary=1, Path=audio, Size=4819 B, Time=2024-11-28T23:01:04.8334510Z
+[541214]: 347ms SPX_TRACE_INFO:  usp_connection.cpp:1008 Response Message: content type: audio/basic.
+[541214]: 347ms SPX_TRACE_INFO:  usp_connection.cpp:1028 TS:334 Response Message: path: audio, size: 4688.
+[541214]: 347ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxPullAudioOutputStream' as '853898539'
+[541214]: 347ms SPX_DBG_TRACE_FUNCTION:  synthesis_result.cpp:25 CSpxSynthesisResult::CSpxSynthesisResult
+[541214]: 347ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxSynthesisResult' as '3874248'
+[541214]: 347ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxPropertyBagImpl::SetStringValue: this=0x0000020EEEF848B8; name='RESULT-SynthesisBackend'; value='online (websocket)'
+[541214]: 347ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:26 CSpxPullAudioOutputStream::Write buffer 0000020EEF059EE7 size=4688
+[69655]: 347ms SPX_DBG_TRACE_SCOPE_ENTER:  synthesizer.cpp:1194 DispatchEvent task started...
+[541214]: 347ms SPX_DBG_TRACE_VERBOSE:  audio_data_stream.cpp:151 CSpxAudioDataStream::CSpxAudioDataStream::Write buffer 0000020EEF059EE7 size=4688
+[69655]: 347ms SPX_DBG_TRACE_VERBOSE:  synthesizer.cpp:569 [0000020EEEB23450]CSpxSynthesizer::CSpxSynthesizer::FireResultEvent
+[69655]: 347ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxSynthesisEventArgs' as '657912386'
+[69655]: 347ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EEEB7BEF0
+[69655]: 347ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesisEventArgs, h=0x0000020EEEB7BEF0, p=0x0000020EEEB7BEF0, tot=1
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA8340
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesisResult, h=0x0000020EECAA8340, p=0x0000020EECAA8340, tot=1
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA8360
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxNamedProperties, h=0x0000020EECAA8360, p=0x0000020EECAA8360, tot=4
+[541214]: 348ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:89 CSpxPullAudioOutputStream::AvailableSize: current available size: 4688
+[69655]: 348ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eeeb7bef0
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EEEB7BEF0
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxSynthesisEventArgs, h=0x0000020EEEB7BEF0, p=0x0000020EEEB7BEF0, tot=0
+[69655]: 348ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eecaa8360
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EECAA8360
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxNamedProperties, h=0x0000020EECAA8360, p=0x0000020EECAA8360, tot=3
+[69655]: 348ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eecaa8340
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EECAA8340
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxSynthesisResult, h=0x0000020EECAA8340, p=0x0000020EECAA8340, tot=0
+[69655]: 348ms SPX_DBG_TRACE_SCOPE_EXIT:  synthesizer.cpp:1194 DispatchEvent task complete!
+[69655]: 348ms SPX_DBG_TRACE_FUNCTION:  synthesis_result.cpp:30 CSpxSynthesisResult::~CSpxSynthesisResult
+[541214]: 348ms SPX_TRACE_VERBOSE:  usp_web_socket.cpp:209 USP message received. IsBinary=1, Path=audio, Size=5231 B, Time=2024-11-28T23:01:04.8342898Z
+[541214]: 348ms SPX_TRACE_INFO:  usp_connection.cpp:1008 Response Message: content type: audio/basic.
+[541214]: 348ms SPX_TRACE_INFO:  usp_connection.cpp:1028 TS:335 Response Message: path: audio, size: 5100.
+[541214]: 348ms SPX_DBG_TRACE_FUNCTION:  synthesis_result.cpp:25 CSpxSynthesisResult::CSpxSynthesisResult
+[541214]: 348ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxSynthesisResult' as '3874248'
+[541214]: 348ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxNamedProperties::GetStringValue: this=0x0000020EECAA8360; name='RESULT-SynthesisBackend'; value='online (websocket)'
+[541214]: 348ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:89 CSpxPullAudioOutputStream::AvailableSize: current available size: 4688
+[541214]: 348ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:26 CSpxPullAudioOutputStream::Write buffer 0000020EEF060477 size=5100
+[541214]: 348ms SPX_DBG_TRACE_VERBOSE:  audio_data_stream.cpp:151 CSpxAudioDataStream::CSpxAudioDataStream::Write buffer 0000020EEF060477 size=5100
+[69655]: 348ms SPX_DBG_TRACE_SCOPE_ENTER:  synthesizer.cpp:1194 DispatchEvent task started...
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  synthesizer.cpp:569 [0000020EEEB23450]CSpxSynthesizer::CSpxSynthesizer::FireResultEvent
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxSynthesisEventArgs' as '657912386'
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EEEB7CB50
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesisEventArgs, h=0x0000020EEEB7CB50, p=0x0000020EEEB7CB50, tot=1
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA8340
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesisResult, h=0x0000020EECAA8340, p=0x0000020EECAA8340, tot=1
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA8360
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxNamedProperties, h=0x0000020EECAA8360, p=0x0000020EECAA8360, tot=4
+[69655]: 348ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eeeb7cb50
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EEEB7CB50
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxSynthesisEventArgs, h=0x0000020EEEB7CB50, p=0x0000020EEEB7CB50, tot=0
+[69655]: 348ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eecaa8360
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EECAA8360
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxNamedProperties, h=0x0000020EECAA8360, p=0x0000020EECAA8360, tot=3
+[69655]: 348ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eecaa8340
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EECAA8340
+[69655]: 348ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxSynthesisResult, h=0x0000020EECAA8340, p=0x0000020EECAA8340, tot=0
+[69655]: 348ms SPX_DBG_TRACE_SCOPE_EXIT:  synthesizer.cpp:1194 DispatchEvent task complete!
+[69655]: 348ms SPX_DBG_TRACE_FUNCTION:  synthesis_result.cpp:30 CSpxSynthesisResult::~CSpxSynthesisResult
+[541214]: 378ms SPX_TRACE_VERBOSE:  usp_web_socket.cpp:209 USP message received. IsBinary=1, Path=audio, Size=6677 B, Time=2024-11-28T23:01:04.8647685Z
+[541214]: 378ms SPX_TRACE_INFO:  usp_connection.cpp:1008 Response Message: content type: audio/basic.
+[541214]: 378ms SPX_TRACE_INFO:  usp_connection.cpp:1028 TS:365 Response Message: path: audio, size: 6546.
+[541214]: 378ms SPX_DBG_TRACE_FUNCTION:  synthesis_result.cpp:25 CSpxSynthesisResult::CSpxSynthesisResult
+[541214]: 378ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxSynthesisResult' as '3874248'
+[541214]: 378ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxNamedProperties::GetStringValue: this=0x0000020EECAA8360; name='RESULT-SynthesisBackend'; value='online (websocket)'
+[541214]: 379ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:89 CSpxPullAudioOutputStream::AvailableSize: current available size: 9788
+[541214]: 379ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:26 CSpxPullAudioOutputStream::Write buffer 0000020EEF0640F7 size=6546
+[541214]: 379ms SPX_DBG_TRACE_VERBOSE:  audio_data_stream.cpp:151 CSpxAudioDataStream::CSpxAudioDataStream::Write buffer 0000020EEF0640F7 size=6546
+[69655]: 379ms SPX_DBG_TRACE_SCOPE_ENTER:  synthesizer.cpp:1194 DispatchEvent task started...
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  synthesizer.cpp:569 [0000020EEEB23450]CSpxSynthesizer::CSpxSynthesizer::FireResultEvent
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxSynthesisEventArgs' as '657912386'
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EEEB7C130
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesisEventArgs, h=0x0000020EEEB7C130, p=0x0000020EEEB7C130, tot=1
+[541214]: 379ms SPX_TRACE_VERBOSE:  usp_web_socket.cpp:209 USP message received. IsBinary=0, Path=audio.metadata, Size=228 B, Time=2024-11-28T23:01:04.8649663Z
+[541214]: 379ms SPX_TRACE_INFO:  usp_connection.cpp:1008 Response Message: content type: application/json; charset=utf-8.
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA8340
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesisResult, h=0x0000020EECAA8340, p=0x0000020EECAA8340, tot=1
+[541214]: 379ms SPX_TRACE_INFO:  usp_connection.cpp:1028 TS:365 Response Message: path: audio.metadata, size: 113.
+[541214]: 379ms SPX_TRACE_VERBOSE:  usp_tts_engine_adapter.cpp:1011 Session end received, audio duration 5354375 ticks
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA8360
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxNamedProperties, h=0x0000020EECAA8360, p=0x0000020EECAA8360, tot=4
+[541214]: 379ms SPX_TRACE_VERBOSE:  usp_web_socket.cpp:209 USP message received. IsBinary=1, Path=audio, Size=931 B, Time=2024-11-28T23:01:04.8650206Z
+[541214]: 379ms SPX_TRACE_INFO:  usp_connection.cpp:1008 Response Message: content type: audio/basic.
+[541214]: 379ms SPX_TRACE_INFO:  usp_connection.cpp:1028 TS:365 Response Message: path: audio, size: 800.
+[541214]: 379ms SPX_DBG_TRACE_FUNCTION:  synthesis_result.cpp:25 CSpxSynthesisResult::CSpxSynthesisResult
+[541214]: 379ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxSynthesisResult' as '3874248'
+[69655]: 379ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eeeb7c130
+[541214]: 379ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxNamedProperties::GetStringValue: this=0x0000020EECAA84D0; name='RESULT-SynthesisBackend'; value='online (websocket)'
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EEEB7C130
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxSynthesisEventArgs, h=0x0000020EEEB7C130, p=0x0000020EEEB7C130, tot=0
+[541214]: 379ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:89 CSpxPullAudioOutputStream::AvailableSize: current available size: 16334
+[69655]: 379ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eecaa8360
+[541214]: 379ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:26 CSpxPullAudioOutputStream::Write buffer 0000020EEF0640F7 size=800
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EECAA8360
+[541214]: 379ms SPX_DBG_TRACE_VERBOSE:  audio_data_stream.cpp:151 CSpxAudioDataStream::CSpxAudioDataStream::Write buffer 0000020EEF0640F7 size=800
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxNamedProperties, h=0x0000020EECAA8360, p=0x0000020EECAA8360, tot=3
+[69655]: 379ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eecaa8340
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EECAA8340
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxSynthesisResult, h=0x0000020EECAA8340, p=0x0000020EECAA8340, tot=0
+[69655]: 379ms SPX_DBG_TRACE_SCOPE_EXIT:  synthesizer.cpp:1194 DispatchEvent task complete!
+[69655]: 379ms SPX_DBG_TRACE_FUNCTION:  synthesis_result.cpp:30 CSpxSynthesisResult::~CSpxSynthesisResult
+[69655]: 379ms SPX_DBG_TRACE_SCOPE_ENTER:  synthesizer.cpp:1194 DispatchEvent task started...
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  synthesizer.cpp:569 [0000020EEEB23450]CSpxSynthesizer::CSpxSynthesizer::FireResultEvent
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxSynthesisEventArgs' as '657912386'
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EEEB7CDF0
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesisEventArgs, h=0x0000020EEEB7CDF0, p=0x0000020EEEB7CDF0, tot=1
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA84B0
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesisResult, h=0x0000020EECAA84B0, p=0x0000020EECAA84B0, tot=1
+[541214]: 379ms SPX_TRACE_VERBOSE:  usp_web_socket.cpp:209 USP message received. IsBinary=1, Path=audio, Size=105 B, Time=2024-11-28T23:01:04.8651244Z
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA84D0
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxNamedProperties, h=0x0000020EECAA84D0, p=0x0000020EECAA84D0, tot=4
+[541214]: 379ms SPX_TRACE_INFO:  usp_connection.cpp:1028 TS:366 Response Message: path: audio, size: 0.
+[69655]: 379ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eeeb7cdf0
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EEEB7CDF0
+[541214]: 379ms SPX_TRACE_VERBOSE:  usp_web_socket.cpp:209 USP message received. IsBinary=0, Path=turn.end, Size=111 B, Time=2024-11-28T23:01:04.8651486Z
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxSynthesisEventArgs, h=0x0000020EEEB7CDF0, p=0x0000020EEEB7CDF0, tot=0
+[541214]: 379ms SPX_TRACE_INFO:  usp_connection.cpp:1008 Response Message: content type: application/json; charset=utf-8.
+[69655]: 379ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eecaa84d0
+[541214]: 379ms SPX_TRACE_INFO:  usp_connection.cpp:1028 TS:366 Response Message: path: turn.end, size: 2.
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EECAA84D0
+[541214]: 379ms SPX_DBG_TRACE_VERBOSE:  usp_connection.cpp:1095 Got turn end, clear m_streamIdLangMap.
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxNamedProperties, h=0x0000020EECAA84D0, p=0x0000020EECAA84D0, tot=3
+[69655]: 379ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eecaa84b0
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EECAA84B0
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxSynthesisResult, h=0x0000020EECAA84B0, p=0x0000020EECAA84B0, tot=0
+[69655]: 379ms SPX_DBG_TRACE_SCOPE_EXIT:  synthesizer.cpp:1194 DispatchEvent task complete!
+[69655]: 379ms SPX_DBG_TRACE_FUNCTION:  synthesis_result.cpp:30 CSpxSynthesisResult::~CSpxSynthesisResult
+[541214]: 379ms SPX_TRACE_INFO:  usp_metrics.cpp:402 Microsoft::CognitiveServices::Speech::USP::CSpxTelemetry::SendSerializedTelemetry: Send telemetry (requestId:fb3216773dc0445db00ddceedda81daa): {"Metrics":[{"Name":"Connection","Id":"9cf8ca64f51143efbdf7257becbf3b8b","Start":"2024-11-28T23:01:04.499Z","End":"2024-11-28T23:01:04.708Z"},{"Name":"device","DeviceId":"ab29453e-1b21-4aa2-bd18-0c30669160dd"}]}
+[541214]: 379ms SPX_TRACE_INFO:  usp_metrics.cpp:402 Microsoft::CognitiveServices::Speech::USP::CSpxTelemetry::SendSerializedTelemetry: Send telemetry (requestId:fb3216773dc0445db00ddceedda81daa): {"ReceivedMessages":[{"turn.start":["2024-11-28T23:01:04.754Z"]},{"turn.end":["2024-11-28T23:01:04.864Z"]},{"audio":["2024-11-28T23:01:04.833Z","2024-11-28T23:01:04.833Z","2024-11-28T23:01:04.864Z","2024-11-28T23:01:04.864Z","2024-11-28T23:01:04.864Z"]},{"audio.metadata":["2024-11-28T23:01:04.864Z"]},{"response":["2024-11-28T23:01:04.770Z"]}]}
+[541214]: 379ms SPX_TRACE_INFO:  thread_service.cpp:96 Started thread User with ID [440633ll]
+[541214]: 379ms SPX_TRACE_INFO:  thread_service.cpp:96 Started thread Background with ID [853780ll]
+[541214]: 379ms SPX_TRACE_INFO:  thread_service.cpp:96 Started thread Media with ID [148297ll]
+[541214]: 379ms SPX_TRACE_VERBOSE:  web_socket.cpp:540 [0x0000020EEEF8B080] Web socket sending message. Time: 2024-11-28T23:01:04.8653302Z, TimeInQueue: 0ms, IsBinary: 0, Path: telemetry, Size:361 B
+[445592]: 379ms SPX_TRACE_INFO:  usp_tts_engine_adapter.cpp:362 CSpxUspTtsEngineAdapter::SpeakInternal: synthesis completed. request id: fb3216773dc0445db00ddceedda81daa.
+[445592]: 379ms SPX_DBG_TRACE_FUNCTION:  synthesis_request.cpp:32 CSpxSynthesisRequest::~CSpxSynthesisRequest
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:166 Signal End of Writing is called
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:89 CSpxPullAudioOutputStream::AvailableSize: current available size: 17134
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:89 CSpxPullAudioOutputStream::AvailableSize: current available size: 17134
+[541214]: 379ms SPX_TRACE_VERBOSE:  web_socket.cpp:649 [0x0000020EEEF8B080] Web socket send message completed. Result: 0, SendTime: 0ms, IsBinary: 0, Path: telemetry, Size:361 B
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:69 CSpxPullAudioOutputStream::Read: is called
+[440633]: 379ms SPX_DBG_TRACE_VERBOSE:  synthesizer.cpp:1174 Word boundary events are all dispatched.
+[541214]: 379ms SPX_TRACE_VERBOSE:  web_socket.cpp:540 [0x0000020EEEF8B080] Web socket sending message. Time: 2024-11-28T23:01:04.8653871Z, TimeInQueue: 0ms, IsBinary: 0, Path: telemetry, Size:495 B
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:136 CSpxPullAudioOutputStream::Read: bytesRead=17134
+[445592]: 379ms SPX_TRACE_VERBOSE:  synthesizer.cpp:351 CSpxSynthesizer::ExecuteSynthesis: audio duration: 535 ms.
+[853780]: 379ms SPX_DBG_TRACE_VERBOSE:  synthesizer.cpp:1180 Viseme events are all dispatched.
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxNamedProperties::GetStringValue: this=0x0000020EECAA77E0; name='RESULT-SynthesisBackend'; value='online (websocket)'
+[541214]: 379ms SPX_TRACE_VERBOSE:  web_socket.cpp:649 [0x0000020EEEF8B080] Web socket send message completed. Result: 0, SendTime: 0ms, IsBinary: 0, Path: telemetry, Size:495 B
+[148297]: 379ms SPX_DBG_TRACE_VERBOSE:  synthesizer.cpp:1186 Bookmark events are all dispatched.
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxPropertyBagImpl::SetStringValue: this=0x0000020EEEF848B8; name='RESULT-SynthesisFirstByteLatencyMs'; value='334'
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxPropertyBagImpl::SetStringValue: this=0x0000020EEEF848B8; name='RESULT-SynthesisFinishLatencyMs'; value='366'
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxPropertyBagImpl::SetStringValue: this=0x0000020EEEF848B8; name='RESULT-SynthesisConnectionLatencyMs'; value='209'
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxPropertyBagImpl::SetStringValue: this=0x0000020EEEF848B8; name='RESULT-SynthesisNetworkLatencyMs'; value='47'
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxPropertyBagImpl::SetStringValue: this=0x0000020EEEF848B8; name='RESULT-SynthesisServiceLatencyMs'; value='78'
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  named_properties.h:479 ISpxPropertyBagImpl::SetStringValue: this=0x0000020EEEF848B8; name='RESULT-SynthesisUnderrunTimeMs'; value='0'
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  pull_audio_output_stream.cpp:166 Signal End of Writing is called
+[445592]: 379ms SPX_TRACE_INFO:  synthesizer.cpp:397 CSpxSynthesizer::ExecuteSynthesis: synthesis done, request id: fb3216773dc0445db00ddceedda81daa; text: <speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-AU'>
+                                    <voice name='en-AU-TimNeural'>
+                                        <mstts:express-as style='Default' styledegree='2'>
+                                            <lang xml:lang='en-AU'>
+                                                <prosody rate='1.15'>
+                                                    <mstts:silence type='Leading-exact' value='0'/>
+                                                        6
+                                                    <mstts:silence type='Tailing-exact' value='25'/>
+                                                </prosody>
+                                            </lang>
+                                        </mstts:express-as>
+                                    </voice>
+                                </speak>; request hash: 
+[69655]: 379ms SPX_DBG_TRACE_SCOPE_ENTER:  synthesizer.cpp:1194 DispatchEvent task started...
+[445592]: 379ms SPX_DBG_TRACE_FUNCTION:  synthesis_result.cpp:30 CSpxSynthesisResult::~CSpxSynthesisResult
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  synthesizer.cpp:569 [0000020EEEB23450]CSpxSynthesizer::CSpxSynthesizer::FireResultEvent
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA77C0
+[69655]: 379ms SPX_TRACE_VERBOSE:  synthesizer.cpp:583 CSpxSynthesizer::FireResultEvent: Waiting for all metadata events triggered.
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesisResult, h=0x0000020EECAA77C0, p=0x0000020EECAA77C0, tot=1
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  resource_manager.cpp:133 Created 'CSpxSynthesisEventArgs' as '657912386'
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EEEB7C6D0
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesisEventArgs, h=0x0000020EEEB7C6D0, p=0x0000020EEEB7C6D0, tot=1
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA77E0
+[445592]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxNamedProperties, h=0x0000020EECAA77E0, p=0x0000020EECAA77E0, tot=4
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA77C0
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxSynthesisResult, h=0x0000020EECAA77C0, p=0x0000020EECAA77C0, tot=2
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:111 CSpxHandleTable::TrackHandle p=0x0000020EECAA77E0
+[69655]: 379ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:121 CSpxHandleTable::TrackHandle class=ISpxNamedProperties, h=0x0000020EECAA77E0, p=0x0000020EECAA77E0, tot=5
+[69655]: 380ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eeeb7c6d0
+[69655]: 380ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EEEB7C6D0
+[69655]: 380ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxSynthesisEventArgs, h=0x0000020EEEB7C6D0, p=0x0000020EEEB7C6D0, tot=0
+[69655]: 380ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eecaa77e0
+[69655]: 380ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EECAA77E0
+[69655]: 380ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxNamedProperties, h=0x0000020EECAA77E0, p=0x0000020EECAA77E0, tot=4
+[69655]: 380ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eecaa77c0
+[69655]: 380ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EECAA77C0
+[69655]: 380ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxSynthesisResult, h=0x0000020EECAA77C0, p=0x0000020EECAA77C0, tot=1
+[69655]: 380ms SPX_DBG_TRACE_SCOPE_EXIT:  synthesizer.cpp:1194 DispatchEvent task complete!
+[643634]: 385ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eeeb238b8
+[643634]: 385ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EEEB238B8
+[643634]: 385ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxNamedProperties, h=0x0000020EEEB238B8, p=0x0000020EEEB238B8, tot=3
+[643634]: 385ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eeeb23488
+[643634]: 385ms SPX_DBG_TRACE_FUNCTION:  synthesizer.cpp:493 CSpxSynthesizer::SetDisposing
+[643634]: 386ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EEEB23488
+[643634]: 386ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxSynthesizer, h=0x0000020EEEB23488, p=0x0000020EEEB23488, tot=0
+[643634]: 386ms SPX_DBG_TRACE_SCOPE_ENTER:  synthesizer.cpp:42 CSpxSynthesizer::~CSpxSynthesizer
+[643634]: 386ms SPX_DBG_TRACE_VERBOSE:  create_object_helpers.h:78 SpxTerm: ptr=0x0000020EEEF66678
+[643634]: 386ms SPX_DBG_TRACE_SCOPE_ENTER:  usp_tts_engine_adapter.cpp:88 CSpxUspTtsEngineAdapter::Term
+[643634]: 386ms SPX_DBG_TRACE_VERBOSE:  create_object_helpers.h:78 SpxTerm: ptr=0x0000020EECB38208
+[643634]: 386ms SPX_DBG_TRACE_SCOPE_ENTER:  usp_connection.cpp:146 Microsoft::CognitiveServices::Speech::USP::CSpxUspConnection::~CSpxUspConnection
+[643634]: 386ms SPX_DBG_TRACE_SCOPE_EXIT:  usp_connection.cpp:146 Microsoft::CognitiveServices::Speech::USP::CSpxUspConnection::~CSpxUspConnection
+[643634]: 386ms SPX_DBG_TRACE_SCOPE_ENTER:  web_socket.cpp:221 CSpxWebSocket::~CSpxWebSocket
+[643634]: 386ms SPX_TRACE_INFO:  web_socket.cpp:421 [0000020EEEF8B080] Web socket upload rate this period was is 14.0194 KB/s
+[643634]: 386ms SPX_TRACE_INFO:  web_socket.cpp:425 CSpxWebSocket::Disconnect: start the close handshake.
+[643634]: 386ms SPX_TRACE_SCOPE_ENTER:  uws_web_socket.cpp:165 WebSocketAdapter::UwsWebSocket::Close
+[474547]: 425ms SPX_TRACE_INFO: AZ_LOG_INFO:  uws_client.c:1496 on_underlying_io_bytes_received: Close frame received
+[474547]: 425ms SPX_TRACE_INFO: AZ_LOG_INFO:  uws_client.c:1574 on_underlying_io_bytes_received: closing underlying io.
+[474547]: 425ms SPX_TRACE_INFO: AZ_LOG_INFO:  uws_client.c:939 on_underlying_io_close_complete: uws_state: 6.
+[474547]: 425ms SPX_TRACE_SCOPE_ENTER:  uws_web_socket.cpp:283 WebSocketAdapter::UwsWebSocket::OnWebSocketClosed
+[474547]: 425ms SPX_TRACE_INFO:  web_socket.cpp:1013 CSpxWebSocket::OnWebSocketClosed: context=0000020EEEF8B080
+[474547]: 425ms SPX_TRACE_SCOPE_EXIT:  uws_web_socket.cpp:283 WebSocketAdapter::UwsWebSocket::OnWebSocketClosed
+[643634]: 440ms SPX_TRACE_SCOPE_EXIT:  uws_web_socket.cpp:165 WebSocketAdapter::UwsWebSocket::Close
+[643634]: 440ms SPX_TRACE_INFO:  web_socket.cpp:427 CSpxWebSocket::Disconnect: isOpen: false
+[643634]: 440ms SPX_TRACE_INFO:  web_socket.cpp:430 CSpxWebSocket::Disconnect: destroying uwsclient.
+[643634]: 440ms SPX_TRACE_SCOPE_ENTER:  uws_web_socket.cpp:36 WebSocketAdapter::UwsWebSocket::~UwsWebSocket
+[643634]: 440ms SPX_TRACE_SCOPE_EXIT:  uws_web_socket.cpp:36 WebSocketAdapter::UwsWebSocket::~UwsWebSocket
+[643634]: 440ms SPX_DBG_TRACE_SCOPE_EXIT:  web_socket.cpp:221 CSpxWebSocket::~CSpxWebSocket
+[643634]: 440ms SPX_DBG_TRACE_SCOPE_EXIT:  usp_tts_engine_adapter.cpp:88 CSpxUspTtsEngineAdapter::Term
+[643634]: 440ms SPX_DBG_TRACE_VERBOSE:  usp_tts_engine_adapter.cpp:67 CSpxUspTtsEngineAdapter::~CSpxUspTtsEngineAdapter: this=0x0000020EEEF66620
+[643634]: 440ms SPX_DBG_TRACE_VERBOSE:  create_object_helpers.h:78 SpxTerm: ptr=0x0000020EECAA1D88
+[643634]: 440ms SPX_DBG_TRACE_SCOPE_ENTER:  thread_service.cpp:45 CSpxThreadService::Term
+[643634]: 440ms SPX_DBG_TRACE_SCOPE_EXIT:  thread_service.cpp:45 CSpxThreadService::Term
+[643634]: 440ms SPX_DBG_TRACE_VERBOSE:  create_object_helpers.h:78 SpxTerm: ptr=0x0000020EECB1A108
+[643634]: 440ms SPX_DBG_TRACE_SCOPE_EXIT:  synthesizer.cpp:42 CSpxSynthesizer::~CSpxSynthesizer
+[643634]: 440ms SPX_DBG_TRACE_SCOPE_ENTER:  thread_service.cpp:45 CSpxThreadService::Term
+[643634]: 440ms SPX_DBG_TRACE_SCOPE_EXIT:  thread_service.cpp:45 CSpxThreadService::Term
+[643634]: 440ms SPX_DBG_TRACE_SCOPE_ENTER:  thread_service.cpp:45 CSpxThreadService::Term
+[643634]: 440ms SPX_DBG_TRACE_SCOPE_EXIT:  thread_service.cpp:45 CSpxThreadService::Term
+[643634]: 441ms SPX_TRACE_VERBOSE interop_factory.cs:84 Dispose(True) called for 20eeeae3538
+[643634]: 441ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:180 CSpxHandleTable::StopTracking(h) h=0x0000020EEEAE3538
+[643634]: 441ms SPX_DBG_TRACE_VERBOSE:  handle_table.h:195 CSpxHandleTable::StopTracking(h) class=ISpxNamedProperties, h=0x0000020EEEAE3538, p=0x0000020EEEAE3538, tot=2
+[643634]: 442ms SPX_DBG_TRACE_FUNCTION:  memory_logger.cpp:130 MemoryLogger::Exit
+[643634]: 442ms SPX_DBG_TRACE_FUNCTION:  resource_manager.cpp:103 CSpxResourceManager::~CSpxResourceManager
