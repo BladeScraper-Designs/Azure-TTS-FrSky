@@ -217,7 +217,6 @@ if (-not (Test-Path $configFilePath)) {
 $shortNameParts = $selectedShortName -split '-'
 $language = $shortNameParts[0]
 $region = $shortNameParts[1]
-$voiceName = $shortNameParts[2]
 
 $baseFilePath = "out/$language/$region/"
 
