@@ -1,11 +1,11 @@
 #### Welcome Message ####
 Write-Host "`nAdvanced Audio Suite (AAS) - Speech Synthesis Script for RC Transmitters"
-Write-Host "Starting..."
+Write-Host ""
 Start-Sleep -Seconds 1.0
 
 
 #### Check Credentials ####
-Write-Host "Checking Azure credentials..."
+Write-Host "Checking Azure credentials..." -NoNewline
 
 $credentialsFilePath = Join-Path $PSScriptRoot "usr\credentials.json"
 
@@ -33,6 +33,7 @@ if (!(Test-Path $credentialsFilePath)) {
     $credentialsData = Get-Content -Raw -Path $credentialsFilePath | ConvertFrom-Json
     $key = $credentialsData.Key
     $region = $credentialsData.Region
+    Write-Host " OK"
 }
 
 if (!(Test-Path (Join-Path $PSScriptRoot "key")) -or !(Test-Path (Join-Path $PSScriptRoot "region"))) {
@@ -45,6 +46,46 @@ if (!(Test-Path (Join-Path $PSScriptRoot "key")) -or !(Test-Path (Join-Path $PSS
 }
 
 $voicesJsonPath = Join-Path $PSScriptRoot "in/voices.json"
+
+# Check if voices.json exists
+if (-not (Test-Path $voicesJsonPath)) {
+    Write-Host "Getting voices from spx..." -NoNewline
+    $output = spx synthesize --voices
+    $path = "in/voices.json"
+
+    # Combine the output into a single string
+    $outputText = $output -join "`n"
+
+    # Extract the JSON portion of the output, ignoring the preceding text (spx response)
+    $jsonStartIndex = $outputText.IndexOf('[')
+    if ($jsonStartIndex -ge 0) {
+        $jsonOutput = $outputText.Substring($jsonStartIndex)
+    }
+
+    # Delete the existing file if it exists
+    if (Test-Path -Path $path) {
+        Remove-Item -Path $path
+    }
+
+    # Write the JSON output to voices.json
+    $jsonOutput | Out-File -FilePath $path -Encoding utf8
+
+    if (Test-Path -Path $path) {
+        Write-Host " OK"
+    } else {
+        Write-Host "Failed to create voices JSON file at $path"
+        return
+    }
+} else {
+    Write-Host "Reading voices.json..." -NoNewline
+    if (Test-Path -Path $voicesJsonPath) {
+    Write-Host " OK"
+    } else {
+        Write-Host "Failed to read voices JSON file at $voicesJsonPath"
+        return
+    }
+}
+
 $voicesJson = Get-Content -Raw -Path $voicesJsonPath | ConvertFrom-Json
 Start-Sleep -Seconds 0.25
 
