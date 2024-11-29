@@ -344,9 +344,8 @@ function Start-Synthesis {
 
     $baseFilePath = "out/$Language/$Region/$ShortName/"
 
-        # get full CSV path and name
+    # get full CSV path and name
     $csvFilePath = Join-Path $PSScriptRoot "in\*.csv"
-    $csvFileName = Get-ChildItem -Path $csvFilePath -Filter "*.csv" | Select-Object -ExpandProperty Name
 
     # Read the CSV file
     Get-Content -Path $csvFilePath | Out-Null
@@ -455,7 +454,7 @@ function Start-Synthesis {
                 break
             }
             spx synthesize --ssml   "<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='$language-$region'>
-                                    <voice name='$language-$region-$voice'>
+                                    <voice name='$ShortName'>
                                         <mstts:express-as style='$Style' styledegree='2'>
                                             <lang xml:lang='$language-$region'>
                                                 <prosody rate='$Speed'>
