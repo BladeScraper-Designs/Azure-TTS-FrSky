@@ -310,7 +310,7 @@ $btnStartSynthesis.Add_Click({
     $ShortName = "$LanguageCode-$Region-$Voice"
 
     # Perform synthesis operation here
-    Start-Synthesis -Language $LanguageCode -Region $Region -ShortName $Voice -Style $Style -Speed $Speed -PostSilence $PostSilence -PreSilence $PreSilence
+    Start-Synthesis -Language $LanguageCode -Region $Region -ShortName $ShortName -Style $Style -Speed $Speed -PostSilence $PostSilence -PreSilence $PreSilence
     
     # Print Complete message
     $LanguageCode = $languageMap.Keys | Where-Object { $languageMap[$_] -eq $Language }
@@ -342,7 +342,7 @@ function Start-Synthesis {
     Write-Host "PostSilence: $PostSilence"
     Write-Host "PreSilence: $PreSilence"
 
-    $baseFilePath = "out/$Language/$Region/$ShortName/"
+    $baseFilePath = "out/$Language/$Region/$Voice/"
 
     # get full CSV path and name
     $csvFilePath = Join-Path $PSScriptRoot "in\*.csv"
