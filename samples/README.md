@@ -1,5 +1,5 @@
 # Sample Audio Files
-Below is a list of all audio files included in the sample archives.
+Below is a list of all audio files included in the sample archives.<br>
 If you would like to request a new audio file, please open an issue on this repository.
 
 | path | text to play |
