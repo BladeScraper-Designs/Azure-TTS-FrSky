@@ -259,6 +259,7 @@ system/watts.wav,watts
 3d.wav,3D
 air.wav,air
 acro.wav,acro
+altitude.wav,altitude
 angle.wav,angle
 armed.wav,armed
 auto.wav,auto
@@ -266,6 +267,9 @@ autorotate.wav,autorotation
 battery-low.wav,battery low
 battery-critical.wav,battery critical
 battery.wav,battery
+battery-cell-low.wav,"battery average cell, low"
+battery-cell-critical.wav,"battery average cell, critical"
+battery-cell.wav,battery average cell
 brakes-off.wav,brakes off
 brakes-on.wav,brakes on
 butterfly-off.wav,butterfly off
@@ -320,6 +324,7 @@ fm-thermal-left.wav,flight mode thermal left
 fm-thermal-right.wav,flight mode thermal right
 gear-down.wav,gear down
 gear-up.wav,gear up
+headspeed.wav,headspeed
 horizon.wav,horizon
 idle-up-1.wav,idle up one
 idle-up-2.wav,idle up two
@@ -357,6 +362,7 @@ self-level-mode.wav,self leveling mode
 sport.wav,sport
 start.wav,start
 stop.wav,stop
+tailspeed.wav,tailspeed
 take-off.wav,take off
 telemetry.wav,telemetry
 telemetry-log-off.wav,telemetry logging off
