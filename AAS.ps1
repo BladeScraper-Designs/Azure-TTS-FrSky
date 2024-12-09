@@ -128,9 +128,10 @@ $xaml = @"
             <Label Content="Leading Silence (ms):" FontSize="14" Width="150" Margin="0,0,0,0"/>
             <TextBox Name="TxtPreSilence" Width="175"/>
         </StackPanel>
-        
+
         <StackPanel Orientation="Horizontal" Margin="10,0,0,0" HorizontalAlignment="Right">
-            <Button Name="BtnStartSynthesis" Content="Start Synthesis" FontSize="14" Width="100" Margin="0,10,20,0"/>
+        <Button Name="BtnPlaySample" Content="Play Sample" FontSize="14" Width="85" Margin="0,10,10,0"/>
+        <Button Name="BtnStartSynthesis" Content="Start Synthesis" FontSize="14" Width="100" Margin="0,10,45,0"/>
         </StackPanel>
         
         <TextBox Name="TxtOutput" Margin="10" Height="100" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
@@ -150,6 +151,7 @@ $cmbStyle = $window.FindName("CmbStyle")
 $txtSpeed = $window.FindName("TxtSpeed")
 $txtPostSilence = $window.FindName("TxtPostSilence")
 $txtPreSilence = $window.FindName("TxtPreSilence")
+$btnPlaySample = $window.FindName("BtnPlaySample")
 $btnStartSynthesis = $window.FindName("BtnStartSynthesis")
 
 # Populate ComboBoxes with options
@@ -318,6 +320,54 @@ $btnStartSynthesis.Add_Click({
     
     # Clear logs after running
     Clear-Logs
+})
+
+# Define a global variable to keep track of the current sample text index
+if (-not $global:currentSampleIndex) {
+    $global:currentSampleIndex = 0
+}
+
+# Add event handler for the play sample button
+$btnPlaySample.Add_Click({
+    # Read the current config from the GUI
+    $Language = $cmbLanguage.SelectedItem
+    $Region = $cmbRegion.SelectedItem
+    $Voice = $cmbVoice.SelectedItem
+    $ShortName = "$LanguageCode-$Region-$Voice"
+    $Style = $cmbStyle.SelectedItem
+    $Speed = [double]$txtSpeed.Text
+    $PostSilence = [int]$txtPostSilence.Text
+    $PreSilence = [int]$txtPreSilence.Text
+    $sampleTextToPlays = @("25 Percent", "Welcome to Ethos", "Flaps Up", "Throttle Hold", "I am AI and I have become sentient.  Prepare for your doom.")
+
+    # Save the current configuration to config.json
+    Save-Config
+
+    # Get the current text to generate
+    $textToGenerate = $sampleTextToPlays[$global:currentSampleIndex]
+    Write-Host "Playing sample..."
+
+    spx synthesize --ssml   "<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='$language-$region'>
+                                    <voice name='$ShortName'>
+                                        <mstts:express-as style='$Style' styledegree='2'>
+                                            <lang xml:lang='$language-$region'>
+                                                <prosody rate='$Speed'>
+                                                    <mstts:silence type='Leading-exact' value='$PreSilence'/>
+                                                        $textToGenerate
+                                                    <mstts:silence type='Tailing-exact' value='$PostSilence'/>
+                                                </prosody>
+                                            </lang>
+                                        </mstts:express-as>
+                                    </voice>
+                                </speak>"
+
+    Clear-Logs
+
+    # Increment the counter and wrap around if it exceeds the numebr of samples
+    $global:currentSampleIndex += 1
+    if ($global:currentSampleIndex -ge $sampleTextToPlays.Count) {
+        $global:currentSampleIndex = 0
+    }
 })
 
 # Define the Start-Synthesis function
